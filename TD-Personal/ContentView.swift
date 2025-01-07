@@ -1,23 +1,30 @@
-//
-//  ContentView.swift
-//  TD-Personal
-//
-//  Created by Moises Sanchez on 03/12/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            MovimientosView()
+                .tabItem {
+                    Label("Movimientos", systemImage: "arrow.left.arrow.right")
+                }
+            DocumentosView()
+                .tabItem {
+                    Label("Documentos", systemImage: "doc.text")
+                }
+            MiCuentaView()
+                .tabItem {
+                    Label("Mi Cuenta", systemImage: "person.circle")
+                        .foregroundColor(Color("blue"))
+                }
         }
-        .padding()
+        .accentColor(Color("blue"))
     }
 }
+
 
 #Preview {
     ContentView()

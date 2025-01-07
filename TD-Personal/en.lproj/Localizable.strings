@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  TD-Personal
+
+  Created by Moises Alejandro Sanchez Vergara on 06/01/25.
+  
+*/
+
+//MARK: Movimientos
+"text_error_cargar" = "Hubo un error. Favor de intentarlo más tarde.";
+"text_sin_movimientos" = "No tienes movimientos para mostrar.";
