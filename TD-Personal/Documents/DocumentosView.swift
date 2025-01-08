@@ -21,10 +21,8 @@ struct DocumentosView: View {
                 Spacer()
             }
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Text("Documentos")
-                        .font(.system(size: 24, weight: .bold))
-                }
+                NavBar(title: .documents)
+                    .frame(maxWidth: .infinity)
                 
             }.frame(maxWidth: .infinity)
         }

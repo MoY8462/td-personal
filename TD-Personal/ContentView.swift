@@ -5,7 +5,7 @@ struct ContentView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label("Inicio", systemImage: "house")
                 }
             MovimientosView()
                 .tabItem {

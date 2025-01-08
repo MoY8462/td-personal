@@ -12,14 +12,18 @@ struct HomeView: View {
             VStack {
                 HStack {
                     Image(systemName: "newspaper.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.bluePrimary)
+                        .frame(width: 24, height: 26)
                     Text("Noticias")
                         .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.bluePrimary)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 CarouselView(images: ["Carrousel", "Carrousel", "Carrousel"])
                     .frame(height: 200)
                     .padding(.vertical)
-
                 Spacer()
             }
             .padding(.horizontal)
@@ -30,12 +34,17 @@ struct HomeView: View {
                             .padding(.leading, 4)
                         Text("Hola Moisés")
                             .font(.system(size: 16, weight: .semibold))
+                            .foregroundColor(.bluePrimary)
                         
                         Spacer()
                         Image(systemName: "bell.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.bluePrimary)
+                            .frame(width: 24, height: 26)
                     }
                     .frame(maxWidth: .infinity)
-                    .padding(.horizontal, 8)
+                    .padding(.horizontal)
                     
                 }
                 
