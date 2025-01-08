@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var homeRouter = HomeRouter()
     var body: some View {
         TabView {
             HomeView()
@@ -22,6 +23,7 @@ struct ContentView: View {
                 }
         }
         .accentColor(Color("blue"))
+        .environmentObject(homeRouter)
     }
 }
 

@@ -7,8 +7,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var homeRouter = HomeRouter()
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $homeRouter.navPath) {
             VStack {
                 HStack {
                     Image(systemName: "newspaper.fill")
@@ -25,6 +26,9 @@ struct HomeView: View {
                     .frame(height: 200)
                     .padding(.vertical)
                 Spacer()
+                Button("Navegar",action: {
+                    homeRouter.navigate(to: .movementDetail)
+                })
             }
             .padding(.horizontal)
             .toolbar {
@@ -49,7 +53,19 @@ struct HomeView: View {
                 }
                 
             }.frame(maxWidth: .infinity)
+                .navigationDestination(for: HomeRouter.Destination.self) { destination in
+                    switch destination {
+                    case .movementDetail: MovementDetailView()
+                    
+                    }
+                }
         }
+    }
+}
+
+struct MovementDetailView: View {
+    var body: some View {
+        Text("Hola mundo")
     }
 }
 
