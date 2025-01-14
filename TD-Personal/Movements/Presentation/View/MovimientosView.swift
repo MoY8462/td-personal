@@ -7,71 +7,92 @@
 import SwiftUI
 
 struct MovimientosView: View {
+    @ObservedObject var movementsRouter = MovementsRouter()
     @StateObject var movimientosViewModel = MovimientosViewModel()
     @State private var empleado: String = "123456"
     var body: some View {
-        VStack {
-            NavBar(title: .movements)
-            ScrollView {
-                VStack {
-                    if movimientosViewModel.errorMessage != nil {
-                        MessageView(text: NSLocalizedString("text_error_cargar", comment: ""))
+        NavigationStack(path: $movementsRouter.navPath) {
+            VStack {
+                NavBar(title: .movements)
+                ScrollView {
+                    VStack {
+                        if movimientosViewModel.errorMessage != nil {
+                            MessageView(text: NSLocalizedString("text_error_cargar", comment: ""))
+                                .padding(.top, 32)
+                        }
+                        else if movimientosViewModel.data.isEmpty {
+                            MessageView(text: NSLocalizedString("text_sin_movimientos", comment: ""))
+                                .padding(.top, 32)
+                        }
+                        else {
+                            HStack {
+                                Image(systemName: "arrow.up.circle.fill")
+                                    .resizable()
+                                    .frame(width: 22, height: 22)
+                                    .foregroundColor(.bluePrimary)
+                                Text("Altas")
+                                    .padding(.leading, 16)
+                                    .font(.system(size: 16, weight: .bold))
+                                    .foregroundColor(.bluePrimary)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
+                            Divider()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, 16)
+                            
+                            
+                            ForEach(movimientosViewModel.data.filter { $0.tipoMovimiento == "alta" }) { item in
+                                Button(action: {
+                                    movementsRouter.navigate(to: .movementDetail)
+                                }) {
+                                    MovimientoItemView(item: item)
+                                }
+                            }
+                            
+                            HStack {
+                                Image(systemName: "arrow.down.circle.fill")
+                                    .resizable()
+                                    .frame(width: 22, height: 22)
+                                    .foregroundColor(.bluePrimary)
+                                Text("Bajas")
+                                    .padding(.leading, 16)
+                                    .font(.system(size: 16, weight: .bold))
+                                    .foregroundColor(.bluePrimary)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
+                            Divider()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, 16)
+                            
+                            ForEach(movimientosViewModel.data.filter { $0.tipoMovimiento == "baja" }) { item in
+                                Button(action: {
+                                    movementsRouter.navigate(to: .movementDetail)
+                                }) {
+                                    MovimientoItemView(item: item)
+                                }
+                            }
+                        }
+                        
                     }
-                    else if movimientosViewModel.data.isEmpty {
-                        MessageView(text: NSLocalizedString("text_sin_movimientos", comment: ""))
-                    }
-                    else {
-                        HStack {
-                            Image(systemName: "arrow.up.circle.fill")
-                                .resizable()
-                                .frame(width: 22, height: 22)
-                                .foregroundColor(.bluePrimary)
-                            Text("Altas")
-                                .padding(.leading, 16)
-                                .font(.system(size: 16, weight: .bold))
-                                .foregroundColor(.bluePrimary)
+                    .padding(.vertical, 16)
+                    .onAppear{
+                        if let empleadoInt = Int(empleado) {
+                            movimientosViewModel.fetchData(for: empleadoInt)
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
-                        Divider()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 16)
-                        
-                        
-                        ForEach(movimientosViewModel.data.filter { $0.tipoMovimiento == "alta" }) { item in
-                            MovimientoItemView(item: item)
-                        }
-                        
-                        HStack {
-                            Image(systemName: "arrow.down.circle.fill")
-                                .resizable()
-                                .frame(width: 22, height: 22)
-                                .foregroundColor(.bluePrimary)
-                            Text("Bajas")
-                                .padding(.leading, 16)
-                                .font(.system(size: 16, weight: .bold))
-                                .foregroundColor(.bluePrimary)
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
-                        Divider()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 16)
-                        
-                        ForEach(movimientosViewModel.data.filter { $0.tipoMovimiento == "baja" }) { item in
-                            MovimientoItemView(item: item)
-                        }
-                    }
-                    
-                }
-                .padding(.vertical, 16)
-                .onAppear{
-                    if let empleadoInt = Int(empleado) {
-                        movimientosViewModel.fetchData(for: empleadoInt)
                     }
                 }
             }
+            .navigationDestination(for: MovementsRouter.Destination.self) { destination in
+                switch destination {
+                case .movementDetail: MovementDetailView(navigationOrigin: .movements)
+                
+                }
+            }
         }
+        .environmentObject(movementsRouter)
+        
         
     }
 
@@ -151,6 +172,7 @@ struct MessageView: View {
                 .foregroundColor(.darkPrimary)
             Spacer()
         }
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 }
 

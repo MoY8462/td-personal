@@ -1,5 +1,5 @@
 //
-//  HomeNavigation.swift
+//  DocumentsRouter.swift
 //  TD-Personal
 //
 //  Created by Moises Alejandro Sanchez Vergara on 08/01/25.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-final class HomeRouter: ObservableObject  {
+final class DocumentsRouter: ObservableObject  {
     public enum Destination: Codable, Hashable {
         case movementDetail
     }

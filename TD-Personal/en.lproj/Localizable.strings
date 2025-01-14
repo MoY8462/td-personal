@@ -9,3 +9,6 @@
 //MARK: Movimientos
 "text_error_cargar" = "Hubo un error. Favor de intentarlo más tarde.";
 "text_sin_movimientos" = "No tienes movimientos para mostrar.";
+//MARK: Documentos
+"text_sin_documentos" = "No tienes documentos para mostrar.";
+"text_sin_notificacioness" = "No tienes notificaciones para mostrar.";

@@ -7,24 +7,25 @@
 import SwiftUI
 
 struct DocumentosView: View {
+    @ObservedObject var documentsRouter = DocumentsRouter()
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $documentsRouter.navPath) {
             VStack {
-                Text("Aquí están tus documentos")
-                    .font(.largeTitle)
-                    .padding()
-                Image(systemName: "doc.text.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-                    .padding()
-                Spacer()
-            }
-            .toolbar {
                 NavBar(title: .documents)
                     .frame(maxWidth: .infinity)
-                
-            }.frame(maxWidth: .infinity)
+                ScrollView {
+                    MessageView(text: NSLocalizedString("text_sin_documentos", comment: ""))
+                        .padding(.top, 32)
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .navigationDestination(for: DocumentsRouter.Destination.self) { destination in
+                    switch destination {
+                    case .movementDetail: MovementDetailView(navigationOrigin: .home)
+                    
+                    }
+                }
         }
+        .environmentObject(documentsRouter)
     }
 }

@@ -8,84 +8,82 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var homeRouter = HomeRouter()
+    @StateObject var homeViewModel = HomeViewModel()
     var body: some View {
         NavigationStack(path: $homeRouter.navPath) {
             VStack {
-                HStack {
-                    Image(systemName: "newspaper.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(.bluePrimary)
-                        .frame(width: 24, height: 26)
-                    Text("Noticias")
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundColor(.bluePrimary)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                CarouselView(images: ["Carrousel", "Carrousel", "Carrousel"])
-                    .frame(height: 200)
-                    .padding(.vertical)
-                Spacer()
-                Button("Navegar",action: {
-                    homeRouter.navigate(to: .movementDetail)
-                })
-            }
-            .padding(.horizontal)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
+                NavBarHome()
+                ScrollView {
                     HStack {
-                        Image("Profile")
-                            .padding(.leading, 4)
-                        Text("Hola Moisés")
-                            .font(.system(size: 16, weight: .semibold))
-                            .foregroundColor(.bluePrimary)
-                        
-                        Spacer()
-                        Image(systemName: "bell.fill")
+                        Image(systemName: "newspaper.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .foregroundColor(.bluePrimary)
                             .frame(width: 24, height: 26)
+                        Text("Noticias")
+                            .font(.system(size: 16, weight: .semibold))
+                            .foregroundColor(.bluePrimary)
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
-                    
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    if !homeViewModel.items.isEmpty {
+                        CarouselView(items: homeViewModel.items)
+                            .frame(height: 200)
+                            .padding(.vertical, 8)
+                    }
+                    HStack {
+                        Image(systemName: "clock.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.bluePrimary)
+                            .frame(width: 24, height: 26)
+                        Text("Ventanillas")
+                            .font(.system(size: 16, weight: .semibold))
+                            .foregroundColor(.bluePrimary)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    Button("Navegar",action: {
+                        homeRouter.navigate(to: .movementDetail)
+                    })
                 }
-                
-            }.frame(maxWidth: .infinity)
-                .navigationDestination(for: HomeRouter.Destination.self) { destination in
+                .padding()
+            }
+            .frame(maxWidth: .infinity)
+            .onAppear {
+                homeViewModel.fetchCarousel()
+            }
+            .navigationDestination(for: HomeRouter.Destination.self) { destination in
                     switch destination {
-                    case .movementDetail: MovementDetailView()
-                    
+                    case .movementDetail: MovementDetailView(navigationOrigin: .home)
                     }
                 }
         }
+        .environmentObject(homeRouter)
+        
     }
 }
 
-struct MovementDetailView: View {
-    var body: some View {
-        Text("Hola mundo")
-    }
-}
+
 
 struct CarouselView: View {
-    let images: [String]
+    let items: [CarouselItem]
     @State private var selectedTab = 0
+    
     var body: some View {
         VStack {
             TabView(selection: $selectedTab) {
-                ForEach(Array(images.enumerated()), id: \.element) { index, imageName in
-                    Image(imageName)
-                        .resizable()
-                        .scaledToFill()
-                        .clipped()
-                        .tag(index)
+                ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
+                    if let imageData = Data(base64Encoded: item.imagen.split(separator: ",").last.map(String.init) ?? ""),
+                       let uiImage = UIImage(data: imageData) {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .clipped()
+                            .tag(index)
+                    }
                 }
             }
             .tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-            
         }
     }
 }
