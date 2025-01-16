@@ -133,6 +133,7 @@ enum NavbarSelected {
     case movements
     case documents
     case account
+    case calendar
     
     var description: String {
         switch self {
@@ -144,6 +145,8 @@ enum NavbarSelected {
             return "Documentos"
         case .account:
             return "Mi cuenta"
+        case .calendar:
+            return "Calendario"
         }
     }
     
@@ -157,6 +160,8 @@ enum NavbarSelected {
             return "folder.fill"
         case .account:
             return ""
+        case .calendar:
+            return "calendar"
         }
     }
 }

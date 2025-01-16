@@ -4,6 +4,7 @@ struct ContentView: View {
     @StateObject var homeRouter = HomeRouter()
     @StateObject var movementsRouter = MovementsRouter()
     @StateObject var documentsRouter = DocumentsRouter()
+    @StateObject var calendarRouter = CalendarRouter()
     var body: some View {
         TabView {
             HomeView()
@@ -13,6 +14,10 @@ struct ContentView: View {
             MovimientosView()
                 .tabItem {
                     Label("Movimientos", systemImage: "arrow.left.arrow.right")
+                }
+            CalendarView()
+                .tabItem {
+                    Label("Calendario", systemImage: "calendar")
                 }
             DocumentosView()
                 .tabItem {
@@ -28,6 +33,7 @@ struct ContentView: View {
         .environmentObject(homeRouter)
         .environmentObject(movementsRouter)
         .environmentObject(documentsRouter)
+        .environmentObject(calendarRouter)
     }
 }
 
