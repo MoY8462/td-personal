@@ -9,12 +9,12 @@ import Foundation
 
 class FetchDocumentsUseCase {
     private let repository: DocumentRepository
-    
+
     init(repository: DocumentRepository) {
         self.repository = repository
     }
-    
-    func execute(employeeNumber: String, completion: @escaping (Result<[Document], Error>) -> Void) {
-        repository.fetchDocuments(employeeNumber: employeeNumber, completion: completion)
+
+    func execute(numeroEmpleado: String, completion: @escaping (Result<DocumentResponse, Error>) -> Void) {
+        repository.fetchDocuments(numeroEmpleado: numeroEmpleado, completion: completion)
     }
 }

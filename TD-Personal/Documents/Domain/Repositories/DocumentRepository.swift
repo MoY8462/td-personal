@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DocumentRepository {
-    func fetchDocuments(employeeNumber: String, completion: @escaping (Result<[Document], Error>) -> Void)
+    func fetchDocuments(numeroEmpleado: String, completion: @escaping (Result<DocumentResponse, Error>) -> Void)
 }

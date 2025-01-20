@@ -7,9 +7,3 @@
 
 import Foundation
 
-struct Document {
-    let id: String
-    let name: String
-    let downloadURL: String
-    let documentType: Int
-}

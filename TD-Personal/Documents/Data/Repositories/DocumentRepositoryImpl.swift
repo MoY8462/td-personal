@@ -8,25 +8,31 @@
 import Foundation
 
 class DocumentRepositoryImpl: DocumentRepository {
-    private let service: DocumentService
-    
-    init(service: DocumentService) {
-        self.service = service
-    }
-    
-    func fetchDocuments(employeeNumber: String, completion: @escaping (Result<[Document], Error>) -> Void) {
-        service.fetchDocuments(employeeNumber: employeeNumber) { result in
-            switch result {
-            case .success(let apiResponse):
-                if let documentDTOs = apiResponse.data?.documents {
-                    let documents = documentDTOs.map { Document(id: $0.id, name: $0.name, downloadURL: $0.downloadURL, documentType: $0.documentType) }
-                    completion(.success(documents))
-                } else {
-                    completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No documents found"])))
-                }
-            case .failure(let error):
+    func fetchDocuments(numeroEmpleado: String, completion: @escaping (Result<DocumentResponse, Error>) -> Void) {
+        let urlString = "https://api.example.com/documents?numeroEmpleado=\(numeroEmpleado)"
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
+            return
+        }
+
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = data else {
+                completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data"])))
+                return
+            }
+
+            do {
+                let response = try JSONDecoder().decode(DocumentResponse.self, from: data)
+                completion(.success(response))
+            } catch {
                 completion(.failure(error))
             }
         }
+        task.resume()
     }
 }

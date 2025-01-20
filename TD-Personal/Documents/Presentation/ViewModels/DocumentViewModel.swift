@@ -6,31 +6,25 @@
 //
 
 import Foundation
+import Combine
 
 class DocumentViewModel: ObservableObject {
-    @Published var documents: [Document] = []
-    @Published var isLoading = true
-    @Published var errorMessage: String?
-    
-    private let fetchDocumentsUseCase: FetchDocumentsUseCase
-    
-    // Inicializador por defecto
-    init(fetchDocumentsUseCase: FetchDocumentsUseCase = FetchDocumentsUseCase(repository: DocumentRepositoryImpl(service: MockDocumentService()) )) {
+    @Published var documents: [Datum] = []
+    private var fetchDocumentsUseCase: FetchDocumentsUseCase
+
+    init(fetchDocumentsUseCase: FetchDocumentsUseCase = FetchDocumentsUseCase(repository: MockDocumentRepository())) {
         self.fetchDocumentsUseCase = fetchDocumentsUseCase
+        fetchDocuments(numeroEmpleado: "12345")
     }
 
-
-    
-    func fetchDocuments(employeeNumber: String) {
-        isLoading = true
-        fetchDocumentsUseCase.execute(employeeNumber: employeeNumber) { [weak self] result in
+    func fetchDocuments(numeroEmpleado: String) {
+        fetchDocumentsUseCase.execute(numeroEmpleado: numeroEmpleado) { [weak self] result in
             DispatchQueue.main.async {
-                self?.isLoading = false
                 switch result {
-                case .success(let documents):
-                    self?.documents = documents
+                case .success(let response):
+                    self?.documents = response.data
                 case .failure(let error):
-                    self?.errorMessage = error.localizedDescription
+                    print("Error fetching documents: \(error)")
                 }
             }
         }
