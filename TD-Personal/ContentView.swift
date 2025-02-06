@@ -15,10 +15,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("Movimientos", systemImage: "arrow.left.arrow.right")
                 }
-            CalendarView()
+            CalendarHeaderView()
                 .tabItem {
                     Label("Calendario", systemImage: "calendar")
                 }
+//                .modelContainer(Activity.preview)
             DocumentosView()
                 .tabItem {
                     Label("Documentos", systemImage: "doc.text")

@@ -41,9 +41,9 @@ struct HomeView: View {
                             .foregroundColor(.bluePrimary)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    Button("Navegar",action: {
-                        homeRouter.navigate(to: .movementDetail)
-                    })
+//                    Button("Navegar",action: {
+//                        homeRouter.navigate(to: .movementDetail)
+//                    })
                 }
                 .padding()
             }
@@ -52,9 +52,9 @@ struct HomeView: View {
                 homeViewModel.fetchCarousel()
             }
             .navigationDestination(for: HomeRouter.Destination.self) { destination in
-                    switch destination {
-                    case .movementDetail: MovementDetailView(navigationOrigin: .home)
-                    }
+//                    switch destination {
+//                    case .movementDetail: MovementDetailView(navigationOrigin: .home)
+//                    }
                 }
         }
         .environmentObject(homeRouter)

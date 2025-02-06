@@ -43,11 +43,9 @@ struct DocumentosView: View {
                                                 .frame(width: 35, height: 35)
                                             VStack(alignment: .leading) {
                                                 Text("\(element.name)\(element.documentType.extensionName)")
-                                                    .font(.headline)
                                                     .font(.system(size: 16, weight: .semibold))
                                                     .foregroundColor(.bluePrimary)
                                                 Text("Última modificación: \(element.fecha)")
-                                                    .font(.subheadline)
                                                     .font(.system(size: 12, weight: .regular))
                                                     .foregroundColor(.bluePrimary)
                                             }
@@ -92,10 +90,10 @@ struct DocumentosView: View {
                     }
                 }
                 .navigationDestination(for: DocumentsRouter.Destination.self) { destination in
-                    switch destination {
-                    case .movementDetail: MovementDetailView(navigationOrigin: .home)
-                    
-                    }
+//                    switch destination {
+//                    case .movementDetail: MovementDetailView(navigationOrigin: .home)
+//                    
+//                    }
                 }
                 VStack(alignment: .trailing) {
                     Spacer()

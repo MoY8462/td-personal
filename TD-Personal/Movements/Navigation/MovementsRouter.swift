@@ -8,9 +8,18 @@
 import Foundation
 import SwiftUI
 
-final class MovementsRouter: ObservableObject  {
-    public enum Destination: Codable, Hashable {
-        case movementDetail
+class MovementsRouter: ObservableObject  {
+    enum Destination: Hashable {
+        static func == (lhs: MovementsRouter.Destination, rhs: MovementsRouter.Destination) -> Bool {
+            return ObjectIdentifier(MovementsRouter.Destination.self) == ObjectIdentifier(MovementsRouter.Destination.self)
+        }
+        
+        public func hash(into hasher: inout Hasher) {
+            hasher.combine(ObjectIdentifier(MovementsRouter.Destination.self))
+        }
+
+        
+        case movementDetail(detailMovementEntity: DetailMovementEntity)
     }
     
     @Published var navPath = NavigationPath()

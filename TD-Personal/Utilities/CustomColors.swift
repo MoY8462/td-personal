@@ -18,6 +18,7 @@ extension Color {
     //MARK: Colores con manejo de opacidad
     static let bluePrimary = Color.custom(red: 55, green: 63, blue: 81, opacity: 1)
     static let darkPrimary = Color.custom(red: 115, green: 115, blue: 115, opacity: 1)
+    static let ligthGrayPrimary = Color.custom(red: 163, green: 163, blue: 163, opacity: 1)
     static let redPrimary = Color.custom(red: 206, green: 43, blue: 51, opacity: 1)
     static let yellowPrimary = Color.custom(red: 250, green: 204, blue: 21, opacity: 1)
     static let greenPrimary = Color.custom(red: 101, green: 163, blue: 13, opacity: 1)

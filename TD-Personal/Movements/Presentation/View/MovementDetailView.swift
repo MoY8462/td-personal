@@ -9,8 +9,9 @@ import Foundation
 import SwiftUI
 
 struct MovementDetailView: View {
-    @State private var progress: Double = 0.0
+    @StateObject var detallesMovimientosViewModel = DetailMovementViewModel()
     var navigationOrigin: NavigationOrigin
+    var detailMovementEntity: DetailMovementEntity
     
     var body: some View {
         VStack {
@@ -24,8 +25,47 @@ struct MovementDetailView: View {
             }
             ScrollView {
                 VStack {
-                    MilestoneProgressView()
+                    VStack(alignment: .leading, spacing: 0) {
+                        if let detailMovement = detallesMovimientosViewModel.detailMovement {
+                            Text("\(detailMovement.nombramiento)")
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(.bluePrimary)
+                                .padding(.vertical,16)
+                            Text("Fecha: \(detailMovement.fecha)")
+                                .font(.system(size: 12, weight: .regular))
+                                .foregroundColor(.ligthGrayPrimary)
+                                .padding(.bottom)
+                            Divider()
+                                .padding(.bottom, 16)
+                            VStack(alignment: .leading, spacing: 0) {
+                                ForEach(Array(detailMovement.status.enumerated()), id: \.element.id)  {
+                                    index,
+                                    status in
+                                    StatusElementView(
+                                        status: status.state,
+                                        titleState: status.nombreMovimiento,
+                                        fechaHoraActualizacion: status.fecha,
+                                        contenidoTooltip: status.contenido
+                                    ) {
+                                        if  index == detailMovement.status.count - 1 {
+                                            EmptyView()
+                                        } else {
+                                            Rectangle()
+                                                .frame(width: 2, height: 54)
+                                                .foregroundColor(status.state.color)
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            .padding()
+                        }
+                    }
                 }
+                .padding(.horizontal)
+            }
+            .onAppear{
+                detallesMovimientosViewModel.fetchDetailMovement(numeroEmpleado: "12345", idMovimiento: "67890")
             }
             
         }
@@ -34,93 +74,28 @@ struct MovementDetailView: View {
     }
 }
 
-struct MilestoneProgressView: View {
+class DetailMovementEntity {
+    private var numeroEmpleado: String
+    private var idMovimiento: String
     
-    @State private var count: Float = 8
-    @State private var radius: CGFloat = 15
-    @State private var lineWidth: CGFloat = 5
-    @State private var progress: CGFloat = 0.1
-    
-    var body: some View {
-        GeometryReader { bounds in
-            VStack(spacing: 70) {
-                MilestoneShape(count: Int(count), radius: radius)
-                    .stroke(lineWidth: lineWidth)
-                    .foregroundColor(.indigo.opacity(0.3))
-                    .padding(.horizontal, lineWidth/2)
-                    .overlay {
-                        MilestoneShape(count: Int(count), radius: radius)
-                            .stroke(lineWidth: lineWidth)
-                            .foregroundColor(.indigo)
-                            .padding(.horizontal, lineWidth/2)
-                            .mask(
-                                HStack {
-                                    Rectangle()
-                                        .frame(width: bounds.size.width * progress, alignment: .leading)
-                                        .blur(radius: 2)
-                                    Spacer(minLength: 0)
-                                }
-                            )
-                    }
-                    .padding(.horizontal, lineWidth/2)
-                    .rotationEffect(.degrees(90)) // Rotar 90 grados
-                    .frame(height: UIScreen.main.bounds.height * 0.5)
-                    .frame(width: .infinity)
-                
-//                controls
-            }
-        }
-        .padding()
+    init(numeroEmpleado: String, idMovimiento: String) {
+        self.numeroEmpleado = numeroEmpleado
+        self.idMovimiento = idMovimiento
     }
     
-    @ViewBuilder private var controls: some View {
-        VStack(spacing: 30) {
-            VStack(alignment: .leading) {
-                Slider(value: $progress, in: 0...1)
-                Text("Progress")
-            }
-            
-            VStack(alignment: .leading) {
-                Slider(value: $count, in: 3...7)
-                Text("Count")
-            }
-            
-            VStack(alignment: .leading) {
-                Slider(value: $radius, in: 5...25)
-                Text("Radius")
-            }
-            
-            VStack(alignment: .leading) {
-                Slider(value: $lineWidth, in: 2...30)
-                Text("Line Width")
-            }
-        }
+    func getNumeroEmpleado() -> String {
+        return numeroEmpleado
     }
     
-    struct MilestoneShape: Shape {
-        let count: Int
-        let radius: CGFloat
-        
-        func path(in rect: CGRect) -> Path {
-            var path = Path()
-            
-            path.move(to: CGPoint(x: 0, y: rect.midY))
-            
-            var maxX: CGFloat = 0
-            let remainingSpace: CGFloat = rect.width - (CGFloat(count)*radius*2)
-            let lineLength: CGFloat = remainingSpace / CGFloat(count - 1)
-            
-            for i in 1...count {
-                path.addEllipse(in: CGRect(origin: CGPoint(x: maxX, y: rect.midY - radius), size: CGSize(width: radius*2, height: radius*2)))
-                maxX += radius*2
-                path.move(to: CGPoint(x: maxX, y: rect.midY))
-                if i != count {
-                    maxX += 30
-                    path.addLine(to: CGPoint(x: maxX, y: rect.midY))
-                }
-            }
-            
-            return path
-        }
+    func getIdMovimiento() -> String {
+        return idMovimiento
+    }
+    
+    func setNumeroEmpleado(numeroEmpleado: String) {
+        self.numeroEmpleado = numeroEmpleado
+    }
+    
+    func setIdMovimiento(idMovimiento: String) {
+        self.idMovimiento = idMovimiento
     }
 }
