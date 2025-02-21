@@ -28,7 +28,7 @@ class DetailMovementViewModel: ObservableObject {
                 case .success(let detailMovement):
                     self?.detailMovement = detailMovement
                 case .failure(let error):
-                    self?.errorMessage = error.localizedDescription
+                    self?.errorMessage = "No se ecnontró información."
                 }
             }
         }

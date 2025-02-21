@@ -8,13 +8,13 @@
 import Foundation
 
 protocol DetailMovementAPIClientProtocol {
-    func request<T: Codable>(endpoint: String, completion: @escaping (Result<T, Error>) -> Void)
+    func request<T: Codable>(endpoint: String, completion: @escaping (Result<T, NSError>) -> Void)
 }
 
 class DetailMovementAPIClient: DetailMovementAPIClientProtocol {
     static let shared = DetailMovementAPIClient()
 
-    func request<T: Codable>(endpoint: String, completion: @escaping (Result<T, Error>) -> Void) {
+    func request<T: Codable>(endpoint: String, completion: @escaping (Result<T, NSError>) -> Void) {
         guard let url = URL(string: endpoint) else {
             completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
@@ -22,7 +22,7 @@ class DetailMovementAPIClient: DetailMovementAPIClientProtocol {
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                completion(.failure(error))
+                completion(.failure(NSError()))
                 return
             }
 
@@ -35,7 +35,7 @@ class DetailMovementAPIClient: DetailMovementAPIClientProtocol {
                 let decodedData = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(decodedData))
             } catch {
-                completion(.failure(error))
+                completion(.failure(NSError()))
             }
         }.resume()
     }

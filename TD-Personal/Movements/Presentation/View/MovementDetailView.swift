@@ -59,13 +59,16 @@ struct MovementDetailView: View {
                                 }
                             }
                             .padding()
+                        } else {
+                            MessageView(text: NSLocalizedString("text_error_cargar", comment: ""))
+                                .padding(.top, 32)
                         }
                     }
                 }
                 .padding(.horizontal)
             }
             .onAppear{
-                detallesMovimientosViewModel.fetchDetailMovement(numeroEmpleado: "12345", idMovimiento: "67890")
+                detallesMovimientosViewModel.fetchDetailMovement(numeroEmpleado:  detailMovementEntity.getNumeroEmpleado(), idMovimiento: detailMovementEntity.getIdMovimiento())
             }
             
         }

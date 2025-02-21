@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DetailMovementService {
-    func fetchDetailMovement(numeroEmpleado: String, idMovimiento: String, completion: @escaping (Result<DetailMovementResponse, Error>) -> Void)
+    func fetchDetailMovement(numeroEmpleado: String, idMovimiento: String, completion: @escaping (Result<DetailMovementResponse, NSError>) -> Void)
 }
 
 class DetailMovementServiceImpl: DetailMovementService {
@@ -18,7 +18,7 @@ class DetailMovementServiceImpl: DetailMovementService {
         self.apiClient = apiClient
     }
 
-    func fetchDetailMovement(numeroEmpleado: String, idMovimiento: String, completion: @escaping (Result<DetailMovementResponse, Error>) -> Void) {
+    func fetchDetailMovement(numeroEmpleado: String, idMovimiento: String, completion: @escaping (Result<DetailMovementResponse, NSError>) -> Void) {
         let endpoint = "https://api.example.com/movements?numeroEmpleado=\(numeroEmpleado)&idMovimiento=\(idMovimiento)"
         apiClient.request(endpoint: endpoint, completion: completion)
     }
