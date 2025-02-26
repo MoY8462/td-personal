@@ -19,7 +19,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Calendario", systemImage: "calendar")
                 }
-//                .modelContainer(Activity.preview)
+                .modelContainer(Activity.preview)
             DocumentosView()
                 .tabItem {
                     Label("Documentos", systemImage: "doc.text")

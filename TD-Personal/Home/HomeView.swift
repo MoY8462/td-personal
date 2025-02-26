@@ -41,9 +41,12 @@ struct HomeView: View {
                             .foregroundColor(.bluePrimary)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-//                    Button("Navegar",action: {
-//                        homeRouter.navigate(to: .movementDetail)
-//                    })
+                    Button("Iniciar sesión",action: {
+                        homeRouter.navigate(to: .login)
+                    })
+                    Button("Registro",action: {
+                        homeRouter.navigate(to: .signup)
+                    })
                 }
                 .padding()
             }
@@ -52,9 +55,10 @@ struct HomeView: View {
                 homeViewModel.fetchCarousel()
             }
             .navigationDestination(for: HomeRouter.Destination.self) { destination in
-//                    switch destination {
-//                    case .movementDetail: MovementDetailView(navigationOrigin: .home)
-//                    }
+                    switch destination {
+                    case .login: SignInView(navigationOrigin: .home)
+                    case .signup: SignUpView(navigationOrigin: .home)
+                    }
                 }
         }
         .environmentObject(homeRouter)

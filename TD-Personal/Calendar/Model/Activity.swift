@@ -21,71 +21,58 @@ import SwiftData
         self.hexColor = hexColor
     }
 }
-
+@MainActor
 extension Activity {
-    @MainActor
+    
     static var preview: ModelContainer {
-        let container = try! ModelContainer(
-            for: Activity.self,
-            configurations: ModelConfiguration(
-                isStoredInMemoryOnly: true
+        do {
+            let container = try ModelContainer(
+                for: Activity.self,
+                configurations: ModelConfiguration(
+                    isStoredInMemoryOnly: true
+                )
             )
-        )
-        var sampleActivities: [Activity] {
-            [
-                Activity(name: "Jogging", icon: .run, hexColor: "B33234"),
-                Activity(name: "Swimming", icon: .poolSwim, hexColor: "6F223D"),
-                Activity(name: "Biking", icon: .outdoorCycle, hexColor: "38571A"),
-                Activity(name: "Elliptical", icon: .elliptical, hexColor: "FF3B30"),
+            
+            // Definir actividades de muestra
+            let escolar = Activity(name: "Escolar", icon: .run, hexColor: "B33234")
+            let pagos = Activity(name: "Pagos", icon: .poolSwim, hexColor: "6F223D")
+            
+            // Definir entrenamientos de muestra para cada actividad
+            let escolarWorkouts = [
+                Workout(date: Date.now.addingTimeInterval(-86400 * 1)), // 1 día atrás
+                Workout(date: Date.now.addingTimeInterval(-86400 * 2)), // 2 días atrás
+                Workout(date: Date.now.addingTimeInterval(-86400 * 3))  // 3 días atrás
             ]
+            
+            let pagosWorkouts = [
+                Workout(date: Date.now.addingTimeInterval(-86400 * 4)), // 4 días atrás
+                Workout(date: Date.now.addingTimeInterval(-86400 * 4)), // 4 días atrás
+                Workout(date: Date.now.addingTimeInterval(-86400 * 5)), // 5 días atrás
+                Workout(date: Date.now.addingTimeInterval(-86400 * 6))  // 6 días atrás
+            ]
+            
+            // Asignar entrenamientos a las actividades
+            escolar.workouts.append(contentsOf: escolarWorkouts)
+            pagos.workouts.append(contentsOf: pagosWorkouts)
+            
+            // Insertar actividades en el contenedor
+            container.mainContext.insert(escolar)
+            container.mainContext.insert(pagos)
+            
+            return container
+        } catch {
+            fatalError("Failed to create ModelContainer: \(error)")
         }
-        
-        let sampleComments =  [
-            "Energized and alive!",
-            "Sweaty but satisfied.",
-            "On top of the world!",
-            "Exhausted but accomplished.",
-            "Muscles are singing!",
-            "Feeling the burn in a good way.",
-            "Empowered and strong.",
-            "Ready to conquer the day.",
-            "A good kind of soreness.",
-            "Proud of the effort.",
-            "Revitalized and refreshed.",
-            "Endorphins pumping!",
-            "Like a fitness superhero!",
-            "Beaming with post-workout glow.",
-            "Unstoppable and determined.",
-            "Tired but triumphant.",
-            "Fuelled with positive vibes.",
-            "In love with the post-workout high.",
-            "Feeling the progress.",
-            "Champion mode activated!"
-        ]
-
-        sampleActivities.forEach { activity in
-            container.mainContext.insert(activity)
-            let randomNumber = Int.random(in: 15...50)
-            for _ in 1...randomNumber {
-                let randomComment = sampleComments[Int.random(in: 0..<sampleComments.count)]
-                let newWorkOut = Workout(date: Date.now.randomDateWithinLastThreeMonths, comment: randomComment)
-                activity.workouts.append(newWorkOut)
-            }
-        }
-        return container
     }
-
 }
 
 @Model
 class Workout {
     var date: Date
     var activity: Activity?
-    var comment: String
     
-    init(date: Date, comment: String = "") {
+    init(date: Date) {
         self.date = date
-        self.comment = comment
     }
 }
 

@@ -26,14 +26,12 @@ struct CalendarView: View {
 
     var body: some View {
         NavigationStack {
-            
-                
                 VStack {
                     HStack {
                         ForEach(daysOfWeek.indices, id: \.self) { index in
                         Text(daysOfWeek[index])
                                 .fontWeight(.black)
-                                .foregroundStyle(.blue)
+                                .foregroundStyle(Color(hex: "#0000FF"))
                                 .frame(maxWidth: .infinity)
                         }
                     }
@@ -51,7 +49,7 @@ struct CalendarView: View {
                                             .foregroundStyle(
                                                 Date.now.startOfDay == day.startOfDay
                                                 ? .red.opacity(counts[day.dayInt] != nil ? 0.8 : 0.3)
-                                                :  .blue.opacity(counts[day.dayInt] != nil ? 0.8 : 0.3)
+                                                : Color(hex: "#0000FF").opacity(counts[day.dayInt] != nil ? 0.8 : 0.3)
                                             )
                                     )
                                     .overlay(alignment: .bottomTrailing) {
@@ -88,10 +86,18 @@ struct CalendarView: View {
     func setupCounts() {
         var filteredWorkouts = workouts
         if let selectedActivity {
-            filteredWorkouts = workouts.filter {$0.activity == selectedActivity}
+            filteredWorkouts = workouts.filter { $0.activity == selectedActivity }
         }
-        let mappedItems = filteredWorkouts.map{($0.date.dayInt, 1)}
-        counts = Dictionary(mappedItems, uniquingKeysWith: +)
+        var uniqueItems = [Int: Int]()
+        for workout in filteredWorkouts {
+            let dayInt = workout.date.dayInt
+            if uniqueItems[dayInt] == nil {
+                uniqueItems[dayInt] = 1
+            } else {
+                uniqueItems[dayInt]! += 1
+            }
+        }
+        counts = uniqueItems
     }
 }
 
@@ -111,7 +117,7 @@ struct CalendarHeaderView: View {
             ScrollView {
                 VStack {
                     Picker("", selection: $selectedActivity) {
-                        Text("All").tag(nil as Activity?)
+//                        Text("All").tag(nil as Activity?)
                         ForEach(activities) { activity in
                             Text(activity.name).tag(activity as Activity?)
                         }
@@ -136,7 +142,11 @@ struct CalendarHeaderView: View {
             }
         }
         .onAppear {
-            years = Array(Set(workouts.map {$0.date.yearInt}.sorted()))
+            let currentYear = Calendar.current.component(.year, from: Date())
+            years = [currentYear, currentYear - 1]
+            if selectedActivity == nil, let firstActivity = activities.first {
+                selectedActivity = firstActivity
+            }
         }
         .onChange(of: selectedYear) {
             updateDate()
@@ -154,4 +164,30 @@ struct CalendarHeaderView: View {
 #Preview {
     CalendarHeaderView()
         .modelContainer(Activity.preview)
+}
+
+extension Color {
+    init(hex: String) {
+        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int: UInt64 = 0
+        Scanner(string: hex).scanHexInt64(&int)
+        let a, r, g, b: UInt64
+        switch hex.count {
+        case 3: // RGB (12-bit)
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6: // RGB (24-bit)
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8: // ARGB (32-bit)
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+        default:
+            (a, r, g, b) = (255, 0, 0, 0)
+        }
+        self.init(
+            .sRGB,
+            red: Double(r) / 255,
+            green: Double(g) / 255,
+            blue: Double(b) / 255,
+            opacity: Double(a) / 255
+        )
+    }
 }
