@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @EnvironmentObject var myAccountRouter: MyAccountRouter
     @State var name: String = ""
     @State var email: String = ""
     @State var rfc: String = ""
     @State var telephone: String = ""
     @State var password: String = ""
     @State var confirmPassword: String = ""
+    @State var nameError: Bool = false
+    @State var emailError: Bool = false
+    @State var rfcError: Bool = false
+    @State var telephoneError: Bool = false
+    @State var passwordError: Bool = false
+    @State var confirmPasswordError: Bool = false
     var navigationOrigin: NavigationOrigin
     var body: some View {
         VStack {
@@ -30,34 +37,40 @@ struct SignUpView: View {
                 InputFieldView(
                     title: "Nombre",
                     placeHolder: "Pedro Dominguez",
-                    inputText: $email
+                    inputText: $name,
+                    errorField: $nameError
                 )
                 InputFieldView(
                     title: "Correo electrónico",
                     placeHolder: "example@dominio.com",
-                    inputText: $email
+                    inputText: $email,
+                    errorField: $emailError
                 )
                 InputFieldView(
                     title: "RFC con homoclave",
                     placeHolder: "PDRS224500789",
-                    inputText: $rfc
+                    inputText: $rfc,
+                    errorField: $rfcError
                 )
                 InputFieldView(
                     title: "Número de teléfono",
                     placeHolder: "55 8489 89450",
-                    inputText: $telephone
+                    inputText: $telephone,
+                    errorField: $telephoneError
                 )
                 InputFieldView(
                     title: "Contraseña",
                     placeHolder: "●●●●●●●●●●●",
-                    inputText: $password
+                    inputText: $password,
+                    errorField: $passwordError
                 )
                 InputFieldView(
                     title: "Confirmar contraseña",
                     placeHolder: "●●●●●●●●●●●",
-                    inputText: $confirmPassword
+                    inputText: $confirmPassword,
+                    errorField: $confirmPasswordError
                 )
-                HStack(spacing: 2) {
+                HStack(spacing: 8) {
                     Text("¿Ya tienes cuenta?")
                         .font(.system(size: 14, weight: .semibold))
                         .foregroundColor(.bluePrimary)
@@ -66,6 +79,10 @@ struct SignUpView: View {
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(.bluePrimary)
                         .padding(.vertical, 16)
+                        .underline()
+                        .onTapGesture {
+                            myAccountRouter.navigate(to: .login)
+                        }
                 }
                 
                 PrimaryButtonView(textButton: "Crear cuenta", action: {})
@@ -76,6 +93,7 @@ struct SignUpView: View {
                     .padding(.vertical, 20)
             }
         }
+        .navigationBarHidden(true)
     }
 }
 

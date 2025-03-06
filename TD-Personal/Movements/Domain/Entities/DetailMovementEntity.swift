@@ -106,7 +106,7 @@ enum Status: String, Codable {
         case .info:
             return .bluePrimary
         case .last:
-            return .bluePrimary
+            return .greenPrimaryLast
         }
     }
 }

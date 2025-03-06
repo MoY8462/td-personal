@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DocumentosView: View {
-    @ObservedObject var documentsRouter = DocumentsRouter()
+    @EnvironmentObject var documentsRouter: DocumentsRouter
     @StateObject var documentsViewModel = DocumentViewModel()
     @State var showToast: Bool = false
     @State var messageToast: String = ""

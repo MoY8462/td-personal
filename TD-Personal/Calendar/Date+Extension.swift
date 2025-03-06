@@ -10,7 +10,8 @@ import Foundation
 extension Date {
     static var firstDayOfWeek = Calendar.current.firstWeekday
     static var capitalizedFirstLettersOfWeekdays: [String] {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.locale = Locale(identifier: "es_ES")
         //           let weekdays = calendar.shortWeekdaySymbols
         
         //           return weekdays.map { weekday in
@@ -30,16 +31,16 @@ extension Date {
         return weekdays.map { $0.capitalized }
     }
        
-       static var fullMonthNames: [String] {
-           let dateFormatter = DateFormatter()
-           dateFormatter.locale = Locale.current
+   static var fullMonthNames: [String] {
+       let dateFormatter = DateFormatter()
+       dateFormatter.locale = Locale(identifier: "es_ES")
 
-           return (1...12).compactMap { month in
-               dateFormatter.setLocalizedDateFormatFromTemplate("MMMM")
-               let date = Calendar.current.date(from: DateComponents(year: 2000, month: month, day: 1))
-               return date.map { dateFormatter.string(from: $0) }
-           }
+       return (1...12).compactMap { month in
+           dateFormatter.setLocalizedDateFormatFromTemplate("MMMM")
+           let date = Calendar.current.date(from: DateComponents(year: 2000, month: month, day: 1))
+           return date.map { dateFormatter.string(from: $0).capitalized }
        }
+   }
     
     var startOfMonth: Date {
         Calendar.current.dateInterval(of: .month, for: self)!.start

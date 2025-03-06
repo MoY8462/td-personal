@@ -11,12 +11,13 @@ struct InputFieldView: View {
     var title: String
     var placeHolder: String
     @Binding var inputText: String
+    @Binding var errorField: Bool
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(title)
                 .font(.system(size: 14, weight: .bold))
-                .foregroundColor(.bluePrimary)
+                .foregroundColor(errorField ? .redPrimary : .bluePrimary)
             TextField(placeHolder, text: $inputText)
                 .font(.system(size: 16, weight: .regular))
                 .foregroundColor(.bluePrimary)
@@ -26,7 +27,7 @@ struct InputFieldView: View {
         .overlay(
             Rectangle()
                 .frame(height: 1)
-                .foregroundColor(.bluePrimary),
+                .foregroundColor(errorField ? .redPrimary : .bluePrimary),
             alignment: .bottom
         )
         .padding()
@@ -44,9 +45,11 @@ enum typeFieldText {
 #Preview {
     @Previewable @State var title:String = "Título"
     @Previewable @State var inputText:String = ""
+    @Previewable @State var inputTextError:Bool = false
     InputFieldView(
         title: title,
         placeHolder: title,
-        inputText: $inputText
+        inputText: $inputText,
+        errorField: $inputTextError
     )
 }
