@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C641DD402D00140E00FAB8DB /* TD-Personal */ = {
+		CAC5B9572D7A360900F3967E /* TD-Personal */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "TD-Personal";
 			sourceTree = "<group>";
@@ -32,7 +32,7 @@
 		C641DD352D00140E00FAB8DB = {
 			isa = PBXGroup;
 			children = (
-				C641DD402D00140E00FAB8DB /* TD-Personal */,
+				CAC5B9572D7A360900F3967E /* TD-Personal */,
 				C641DD3F2D00140E00FAB8DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				C641DD402D00140E00FAB8DB /* TD-Personal */,
+				CAC5B9572D7A360900F3967E /* TD-Personal */,
 			);
 			name = "TD-Personal";
 			packageProductDependencies = (
@@ -260,6 +260,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,6 +294,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -72,10 +72,10 @@ class MockDataRepository: DataRepository {
     func fetchData(for empleado: Int, completion: @escaping (Result<[MovimientoEntity], Error>) -> Void) {
         //MARK: Simulación de una respuesta exitosa con datos mock
         let mockData = [
-            MovimientoEntity(id: 1, empleado: empleado, nombramiento: "Gerente de Ventas", tipoMovimiento: "baja", nombreMovimiento: "Disminución Horas", fecha: dateFormatter.date(from: "2023-10-01T14:30:00")!, estatus: 0),
-            MovimientoEntity(id: 2, empleado: empleado, nombramiento: "Subgerente de Ventas", tipoMovimiento: "alta", nombreMovimiento: "Prórroga", fecha: dateFormatter.date(from: "2023-10-01T14:30:00")!, estatus: 1),
-            MovimientoEntity(id: 3, empleado: empleado, nombramiento: "Subgerente de Ventas", tipoMovimiento: "baja", nombreMovimiento: "Prórroga", fecha: dateFormatter.date(from: "2023-10-01T14:30:00")!, estatus: 2),
-            MovimientoEntity(id: 4, empleado: empleado, nombramiento: "Subgerente de Ventas", tipoMovimiento: "alta", nombreMovimiento: "Prórroga", fecha: dateFormatter.date(from: "2023-10-01T14:30:00")!, estatus: 3)
+            MovimientoEntity(id: 1, empleado: empleado, nombramiento: "Prórroga para ayudante de profesor de asignatura “A”", tipoMovimiento: "baja", nombreMovimiento: "Disminución Horas", fecha: dateFormatter.date(from: "2023-10-01T14:30:00")!, estatus: 2),
+            MovimientoEntity(id: 2, empleado: empleado, nombramiento: "Prórroga para ayudante de profesor de asignatura “A”", tipoMovimiento: "alta", nombreMovimiento: "Prórroga", fecha: dateFormatter.date(from: "2023-10-01T14:30:00")!, estatus: 3),
+            MovimientoEntity(id: 3, empleado: empleado, nombramiento: "Subgerente de Ventas", tipoMovimiento: "baja", nombreMovimiento: "Prórroga", fecha: dateFormatter.date(from: "2023-10-01T14:30:00")!, estatus: 1),
+            MovimientoEntity(id: 4, empleado: empleado, nombramiento: "Subgerente de Ventas", tipoMovimiento: "alta", nombreMovimiento: "Prórroga", fecha: dateFormatter.date(from: "2023-10-01T14:30:00")!, estatus: 0)
         ]
         completion(.success(mockData))
         //MARK: Simulación de una respuesta vacía
