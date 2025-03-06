@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NavBar: View {
+    @EnvironmentObject var globalVariables: GlobalVariables
     @State private var showBottomSheet = false
     var title: NavbarSelected
     var body: some View {
@@ -25,17 +26,19 @@ struct NavBar: View {
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(.bluePrimary)
                 Spacer()
-                Image(systemName: "bell.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.bluePrimary)
-                    .frame(width: 24, height: 26)
-                    .onTapGesture {
-                        showBottomSheet.toggle()
-                    }
-                    .sheet(isPresented: $showBottomSheet) {
-                        Notificaciones(showBottom: $showBottomSheet)
-                    }
+                if globalVariables.loginAuth {
+                    Image(systemName: "bell.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.bluePrimary)
+                        .frame(width: 24, height: 26)
+                        .onTapGesture {
+                            showBottomSheet.toggle()
+                        }
+                        .sheet(isPresented: $showBottomSheet) {
+                            Notificaciones(showBottom: $showBottomSheet)
+                        }
+                }
             }
             .frame(maxWidth: .infinity)
             .padding()
@@ -47,6 +50,7 @@ struct NavBar: View {
 }
 
 struct NavBarSecondary: View {
+    @EnvironmentObject var globalVariables: GlobalVariables
     @EnvironmentObject var movementsRouter: MovementsRouter
     @EnvironmentObject var homeRouter: HomeRouter
     @State private var showBottomSheet = false
@@ -75,17 +79,20 @@ struct NavBarSecondary: View {
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(.bluePrimary)
                 Spacer()
-                Image(systemName: "bell.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.bluePrimary)
-                    .frame(width: 24, height: 26)
-                    .onTapGesture {
-                        showBottomSheet.toggle()
-                    }
-                    .sheet(isPresented: $showBottomSheet) {
-                        Notificaciones(showBottom: $showBottomSheet)
-                    }
+                if globalVariables.loginAuth {
+                    Image(systemName: "bell.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.bluePrimary)
+                        .frame(width: 24, height: 26)
+                        .onTapGesture {
+                            showBottomSheet.toggle()
+                        }
+                        .sheet(isPresented: $showBottomSheet) {
+                            Notificaciones(showBottom: $showBottomSheet)
+                        }
+                }
+
             }
             .frame(maxWidth: .infinity)
             .padding()
@@ -111,17 +118,19 @@ struct NavBarHome: View {
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(.bluePrimary)
                 Spacer()
-                Image(systemName: "bell.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.bluePrimary)
-                    .frame(width: 24, height: 26)
-                    .onTapGesture {
-                        showBottomSheet.toggle()
-                    }
-                    .sheet(isPresented: $showBottomSheet) {
-                        Notificaciones(showBottom: $showBottomSheet)
-                    }
+                if globalVariables.loginAuth {
+                    Image(systemName: "bell.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.bluePrimary)
+                        .frame(width: 24, height: 26)
+                        .onTapGesture {
+                            showBottomSheet.toggle()
+                        }
+                        .sheet(isPresented: $showBottomSheet) {
+                            Notificaciones(showBottom: $showBottomSheet)
+                        }
+                }
             }
             .frame(maxWidth: .infinity)
             .padding()

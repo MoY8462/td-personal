@@ -12,6 +12,7 @@ final class MyAccountRouter: ObservableObject  {
     public enum Destination: Codable, Hashable {
         case login
         case signup
+        case recovery
     }
     
     @Published var navPath = NavigationPath()

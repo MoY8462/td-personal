@@ -120,8 +120,15 @@ struct MiCuentaView: View {
             }
             .navigationDestination(for: MyAccountRouter.Destination.self) { destination in
                     switch destination {
-                    case .login: SignInView(navigationOrigin: .account)
-                    case .signup: SignUpView(navigationOrigin: .account)
+                    case .login: SignInView(
+                        navigationOrigin: .account
+                    )
+                    case .signup: SignUpView(
+                        navigationOrigin: .account
+                    )
+                    case .recovery: RecoveryPasswordView(
+                        navigationOrigin: .account
+                    )
                     }
                 }
         }

@@ -41,9 +41,13 @@ struct SignInView: View {
                     errorField: $passwordError
                 )
                 Text("¿Olvidaste tu contraseña?")
-                    .font(.system(size: 14, weight: .semibold))
+                    .font(.system(size: 14, weight: .regular))
                     .foregroundColor(.bluePrimary)
+                    .underline()
                     .padding(.vertical, 16)
+                    .onTapGesture {
+                        myAccountRouter.navigate(to: .recovery)
+                    }
                 HStack(spacing: 8) {
                     Text("¿No tienes cuenta?")
                         .font(.system(size: 14, weight: .semibold))
