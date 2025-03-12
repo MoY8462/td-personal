@@ -8,33 +8,37 @@ struct ContentView: View {
     @StateObject var calendarRouter = CalendarRouter()
     @StateObject var globalVariables = GlobalVariables()
     var body: some View {
-        TabView {
+        TabView(selection: $globalVariables.currentTab) {
             HomeView()
                 .tabItem {
                     Label("Inicio", systemImage: "house")
                 }
+                .tag(Tab.home)
             if globalVariables.loginAuth {
                 MovimientosView()
                     .tabItem {
                         Label("Movimientos", systemImage: "arrow.left.arrow.right")
                     }
+                    .tag(Tab.movements)
             }
             CalendarHeaderView()
                 .tabItem {
                     Label("Calendario", systemImage: "calendar")
                 }
-                .modelContainer(Activity.preview)
+                .tag(Tab.calendar)
             if globalVariables.loginAuth {
                 DocumentosView()
                     .tabItem {
                         Label("Documentos", systemImage: "doc.text")
                     }
+                    .tag(Tab.documents)
             }
             MiCuentaView()
                 .tabItem {
                     Label("Mi Cuenta", systemImage: "person.circle")
                         .foregroundColor(Color("blue"))
                 }
+                .tag(Tab.profile)
         }
         .accentColor(Color("blue"))
         .environmentObject(homeRouter)
