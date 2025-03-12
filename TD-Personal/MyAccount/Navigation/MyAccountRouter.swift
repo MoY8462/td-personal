@@ -1,17 +1,18 @@
 //
-//  HomeNavigation.swift
+//  MyAccountRouter.swift
 //  TD-Personal
 //
-//  Created by Moises Alejandro Sanchez Vergara on 08/01/25.
+//  Created by Moises Alejandro Sanchez Vergara on 06/03/25.
 //
 
 import Foundation
 import SwiftUI
 
-final class HomeRouter: ObservableObject  {
+final class MyAccountRouter: ObservableObject  {
     public enum Destination: Codable, Hashable {
         case login
         case signup
+        case recovery
     }
     
     @Published var navPath = NavigationPath()

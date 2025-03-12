@@ -44,7 +44,9 @@ struct MovimientosView: View {
                             
                             ForEach(movimientosViewModel.data.filter { $0.tipoMovimiento == "alta" }) { item in
                                 Button(action: {
-                                    movementsRouter.navigate(to: .movementDetail)
+                                    movementsRouter.navigate(to: .movementDetail(
+                                        detailMovementEntity: DetailMovementEntity(numeroEmpleado: String(item.empleado), idMovimiento: String(item.id))
+                                    ))
                                 }) {
                                     MovimientoItemView(item: item)
                                 }
@@ -68,7 +70,9 @@ struct MovimientosView: View {
                             
                             ForEach(movimientosViewModel.data.filter { $0.tipoMovimiento == "baja" }) { item in
                                 Button(action: {
-                                    movementsRouter.navigate(to: .movementDetail)
+                                    movementsRouter.navigate(to: .movementDetail(
+                                        detailMovementEntity: DetailMovementEntity(numeroEmpleado: String(item.empleado), idMovimiento: String(item.id))
+                                    ))
                                 }) {
                                     MovimientoItemView(item: item)
                                 }
@@ -86,7 +90,10 @@ struct MovimientosView: View {
             }
             .navigationDestination(for: MovementsRouter.Destination.self) { destination in
                 switch destination {
-                case .movementDetail: MovementDetailView(navigationOrigin: .movements)
+                case .movementDetail(let detailMovementEntity):
+                    MovementDetailView(
+                            navigationOrigin: .movements,
+                            detailMovementEntity: detailMovementEntity)
                 
                 }
             }

@@ -7,7 +7,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var homeRouter = HomeRouter()
+    @EnvironmentObject var homeRouter: HomeRouter
+    @EnvironmentObject var globalVariables: GlobalVariables
     @StateObject var homeViewModel = HomeViewModel()
     var body: some View {
         NavigationStack(path: $homeRouter.navPath) {
@@ -41,19 +42,25 @@ struct HomeView: View {
                             .foregroundColor(.bluePrimary)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    Button("Navegar",action: {
-                        homeRouter.navigate(to: .movementDetail)
-                    })
+//                    Button("Iniciar sesión",action: {
+//                        homeRouter.navigate(to: .login)
+//                    })
+//                    Button("Registro",action: {
+//                        homeRouter.navigate(to: .signup)
+//                    })
                 }
                 .padding()
             }
             .frame(maxWidth: .infinity)
             .onAppear {
+//                globalVariables.loginAuth = true
+                print("MASV -- GV \(globalVariables.loginAuth)")
                 homeViewModel.fetchCarousel()
             }
             .navigationDestination(for: HomeRouter.Destination.self) { destination in
                     switch destination {
-                    case .movementDetail: MovementDetailView(navigationOrigin: .home)
+                    case .login: SignInView(navigationOrigin: .home)
+                    case .signup: SignUpView(navigationOrigin: .home)
                     }
                 }
         }

@@ -7,17 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CE561664-4E7D-4DB7-ACBD-27A1E17DB6B5"
+            uuid = "BC481F15-A4A5-4C95-B1B0-6A12982CE04A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TD-Personal/Movements/Navigation/MovementsRouter.swift"
+            filePath = "TD-Personal/Movements/Data/Network/MockDetailMovementService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "navigateToRoot()"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "fetchDetailMovement(numeroEmpleado:idMovimiento:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D4688ECE-2F33-443D-B0DB-E6035A3DF35C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TD-Personal/Movements/Presentation/View/MovimientosView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
