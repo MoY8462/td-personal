@@ -14,16 +14,14 @@ struct CalendarView: View {
     @State private var days: [DayInfo] = []
     @State private var daysInfo: [DayInfo] = []
     @State var showBottomInfo: Bool = false
-    let selectedActivity: Activity?
-    @Query private var workouts: [Workout]
+    var selectedActivity: Activity?
+    var workouts: [Workout]
     @State private var counts = [Int : Int]()
     
-    init(date: Date, selectedActivity: Activity?) {
+    init(date: Date, selectedActivity: Activity?, workouts: [Workout]) {
         self.date = date
         self.selectedActivity = selectedActivity
-        let endOfMonthAdjustment = Calendar.current.date(byAdding: .day, value: 1, to: date.endOfMonth)!
-        let predicate = #Predicate<Workout> {$0.date >= date.startOfMonth && $0.date < endOfMonthAdjustment}
-        _workouts = Query(filter: predicate, sort: \Workout.date)
+        self.workouts = workouts
     }
 
     var body: some View {
@@ -100,7 +98,7 @@ struct CalendarView: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        ForEach(daysInfo) { dayInfo in
+                        ForEach(daysInfo.filter { $0.date.monthInt == date.monthInt }) { dayInfo in
                             if counts[dayInfo.date.dayInt] != nil {
                                 DayComponentView(dayInfo: dayInfo)
                             }
@@ -111,36 +109,17 @@ struct CalendarView: View {
              .padding(.vertical)
         }
     }
-
-//    func setupCounts() {
-//        var filteredWorkouts = workouts
-//        if let selectedActivity {
-//            filteredWorkouts = workouts.filter { $0.activity == selectedActivity }
-//        }
-//        var uniqueItems = [Int: Int]()
-//        for workout in filteredWorkouts {
-//            let dayInt = workout.date.dayInt
-//            if uniqueItems[dayInt] == nil {
-//                uniqueItems[dayInt] = 1
-//            } else {
-//                uniqueItems[dayInt]! += 1
-//            }
-//        }
-//        counts = uniqueItems
-//    }
     func setupCounts() {
-        var filteredWorkouts = workouts
-        if let selectedActivity {
-            filteredWorkouts = workouts.filter { $0.activity == selectedActivity }
-        }
         var uniqueItems = [Int: Int]()
         var dayInfos = [DayInfo]()
-        for workout in filteredWorkouts {
+        for workout in workouts {
             let dayInt = workout.date.dayInt
-            if uniqueItems[dayInt] == nil {
-                uniqueItems[dayInt] = 1
-            } else {
-                uniqueItems[dayInt]! += 1
+            if workout.date.monthInt == date.monthInt {
+                if uniqueItems[dayInt] == nil {
+                    uniqueItems[dayInt] = 1
+                } else {
+                    uniqueItems[dayInt]! += 1
+                }
             }
             let dayInfo = DayInfo(date: workout.date, title: workout.titleDate, message: workout.messageDate)
             dayInfos.append(dayInfo)

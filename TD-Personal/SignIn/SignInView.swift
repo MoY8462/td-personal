@@ -80,6 +80,7 @@ struct SignInView: View {
     func logingUser(email: String, password: String) {
         if email == "prueba@dominio.com" && password == "Prueba123" {
             globalVariables.loginAuth = true
+            globalVariables.currentTab = .home
             myAccountRouter.navigateToRoot()
         } else {
             emailError = true
