@@ -42,19 +42,12 @@ struct HomeView: View {
                             .foregroundColor(.bluePrimary)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-//                    Button("Iniciar sesión",action: {
-//                        homeRouter.navigate(to: .login)
-//                    })
-//                    Button("Registro",action: {
-//                        homeRouter.navigate(to: .signup)
-//                    })
+                    
                 }
                 .padding()
             }
             .frame(maxWidth: .infinity)
             .onAppear {
-//                globalVariables.loginAuth = true
-                print("MASV -- GV \(globalVariables.loginAuth)")
                 homeViewModel.fetchCarousel()
             }
             .navigationDestination(for: HomeRouter.Destination.self) { destination in
@@ -72,7 +65,7 @@ struct HomeView: View {
 
 
 struct CarouselView: View {
-    let items: [CarouselItem]
+    let items: [CarouselItemDTO]
     @State private var selectedTab = 0
     
     var body: some View {

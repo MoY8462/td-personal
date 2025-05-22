@@ -38,6 +38,13 @@ struct NavBar: View {
                         .sheet(isPresented: $showBottomSheet) {
                             Notificaciones(showBottom: $showBottomSheet)
                         }
+                } else  {
+                    Text("Iniciar sesión")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.bluePrimary)
+                        .onTapGesture {
+                            globalVariables.currentTab = .profile
+                        }
                 }
             }
             .frame(maxWidth: .infinity)
@@ -91,6 +98,13 @@ struct NavBarSecondary: View {
                         .sheet(isPresented: $showBottomSheet) {
                             Notificaciones(showBottom: $showBottomSheet)
                         }
+                } else  {
+                    Text("Iniciar sesión")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.bluePrimary)
+                        .onTapGesture {
+                            globalVariables.currentTab = .profile
+                        }
                 }
 
             }
@@ -113,6 +127,12 @@ struct NavBarHome: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 35, height: 35)
+                } else {
+                    Image(systemName: "person.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.bluePrimary)
+                        .frame(width: 22, height: 22)
                 }
                 Text(globalVariables.loginAuth ? "Hola Moisés" : "Hola")
                     .font(.system(size: 16, weight: .bold))
@@ -129,6 +149,13 @@ struct NavBarHome: View {
                         }
                         .sheet(isPresented: $showBottomSheet) {
                             Notificaciones(showBottom: $showBottomSheet)
+                        }
+                } else  {
+                    Text("Iniciar sesión")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.bluePrimary)
+                        .onTapGesture {
+                            globalVariables.currentTab = .profile
                         }
                 }
             }

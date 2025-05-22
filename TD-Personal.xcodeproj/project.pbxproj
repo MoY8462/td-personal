@@ -6,17 +6,174 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CA14082F2DDECB4500AA3C41 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA14081A2DDECB4500AA3C41 /* Preview Assets.xcassets */; };
+		CA1408302DDECB4500AA3C41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1408292DDECB4500AA3C41 /* Assets.xcassets */; };
+		CA1408312DDECB4500AA3C41 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA14082C2DDECB4500AA3C41 /* Localizable.strings */; };
+		CA1408322DDECB4500AA3C41 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407AB2DDECB4500AA3C41 /* Activity.swift */; };
+		CA1408332DDECB4500AA3C41 /* CalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407AD2DDECB4500AA3C41 /* CalendarRouter.swift */; };
+		CA1408342DDECB4500AA3C41 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407AF2DDECB4500AA3C41 /* CalendarHeaderView.swift */; };
+		CA1408352DDECB4500AA3C41 /* DayComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407B02DDECB4500AA3C41 /* DayComponentView.swift */; };
+		CA1408362DDECB4500AA3C41 /* InfoMessageDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407B12DDECB4500AA3C41 /* InfoMessageDayView.swift */; };
+		CA1408372DDECB4500AA3C41 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407B32DDECB4500AA3C41 /* CalendarView.swift */; };
+		CA1408382DDECB4500AA3C41 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407B52DDECB4500AA3C41 /* Date+Extension.swift */; };
+		CA1408392DDECB4500AA3C41 /* DocumentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407B72DDECB4500AA3C41 /* DocumentDTO.swift */; };
+		CA14083A2DDECB4500AA3C41 /* DocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407B92DDECB4500AA3C41 /* DocumentService.swift */; };
+		CA14083B2DDECB4500AA3C41 /* MockDocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407BA2DDECB4500AA3C41 /* MockDocumentService.swift */; };
+		CA14083C2DDECB4500AA3C41 /* DocumentRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407BC2DDECB4500AA3C41 /* DocumentRepositoryImpl.swift */; };
+		CA14083D2DDECB4500AA3C41 /* EntitieDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407BF2DDECB4500AA3C41 /* EntitieDocument.swift */; };
+		CA14083E2DDECB4500AA3C41 /* DocumentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407C12DDECB4500AA3C41 /* DocumentRepository.swift */; };
+		CA14083F2DDECB4500AA3C41 /* FetchDocumentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407C32DDECB4500AA3C41 /* FetchDocumentsUseCase.swift */; };
+		CA1408402DDECB4500AA3C41 /* DocumentsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407C62DDECB4500AA3C41 /* DocumentsRouter.swift */; };
+		CA1408412DDECB4500AA3C41 /* DocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407C82DDECB4500AA3C41 /* DocumentViewModel.swift */; };
+		CA1408422DDECB4500AA3C41 /* DocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407CB2DDECB4500AA3C41 /* DocumentsView.swift */; };
+		CA1408442DDECB4500AA3C41 /* CarouselDataSourceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407CE2DDECB4500AA3C41 /* CarouselDataSourceImp.swift */; };
+		CA1408452DDECB4500AA3C41 /* EntityCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407D02DDECB4500AA3C41 /* EntityCarousel.swift */; };
+		CA1408462DDECB4500AA3C41 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407D22DDECB4500AA3C41 /* HomeRouter.swift */; };
+		CA1408472DDECB4500AA3C41 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407D42DDECB4500AA3C41 /* HomeViewModel.swift */; };
+		CA1408482DDECB4500AA3C41 /* CarouselRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407D62DDECB4500AA3C41 /* CarouselRepositoryImp.swift */; };
+		CA14084A2DDECB4500AA3C41 /* CarouselImagesUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407D92DDECB4500AA3C41 /* CarouselImagesUseCaseImpl.swift */; };
+		CA14084B2DDECB4500AA3C41 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407DB2DDECB4500AA3C41 /* HomeView.swift */; };
+		CA14084C2DDECB4500AA3C41 /* DetailMovementAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407DD2DDECB4500AA3C41 /* DetailMovementAPIClient.swift */; };
+		CA14084D2DDECB4500AA3C41 /* DetailMovementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407DE2DDECB4500AA3C41 /* DetailMovementService.swift */; };
+		CA14084E2DDECB4500AA3C41 /* MockDetailMovementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407DF2DDECB4500AA3C41 /* MockDetailMovementService.swift */; };
+		CA14084F2DDECB4500AA3C41 /* AllMovementsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407E22DDECB4500AA3C41 /* AllMovementsEntity.swift */; };
+		CA1408502DDECB4500AA3C41 /* DetailMovementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407E32DDECB4500AA3C41 /* DetailMovementEntity.swift */; };
+		CA1408512DDECB4500AA3C41 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407E52DDECB4500AA3C41 /* DataRepository.swift */; };
+		CA1408522DDECB4500AA3C41 /* DetailMovementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407E62DDECB4500AA3C41 /* DetailMovementRepository.swift */; };
+		CA1408532DDECB4500AA3C41 /* DetailMovementRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407E72DDECB4500AA3C41 /* DetailMovementRepositoryImpl.swift */; };
+		CA1408542DDECB4500AA3C41 /* RealDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407E82DDECB4500AA3C41 /* RealDataRepository.swift */; };
+		CA1408552DDECB4500AA3C41 /* AllMovementsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407EA2DDECB4500AA3C41 /* AllMovementsUseCase.swift */; };
+		CA1408562DDECB4500AA3C41 /* FetchDetailMovementUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407EB2DDECB4500AA3C41 /* FetchDetailMovementUseCase.swift */; };
+		CA1408572DDECB4500AA3C41 /* MovementsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407EE2DDECB4500AA3C41 /* MovementsRouter.swift */; };
+		CA1408582DDECB4500AA3C41 /* InfoStatusSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407F02DDECB4500AA3C41 /* InfoStatusSheetView.swift */; };
+		CA1408592DDECB4500AA3C41 /* StatusElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407F12DDECB4500AA3C41 /* StatusElementView.swift */; };
+		CA14085A2DDECB4500AA3C41 /* MovementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407F32DDECB4500AA3C41 /* MovementDetailView.swift */; };
+		CA14085B2DDECB4500AA3C41 /* MovimientosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407F42DDECB4500AA3C41 /* MovimientosView.swift */; };
+		CA14085C2DDECB4500AA3C41 /* DetailMovementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407F62DDECB4500AA3C41 /* DetailMovementViewModel.swift */; };
+		CA14085D2DDECB4500AA3C41 /* MovimientoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407F72DDECB4500AA3C41 /* MovimientoViewModel.swift */; };
+		CA14085E2DDECB4500AA3C41 /* EmpleadoRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407FB2DDECB4500AA3C41 /* EmpleadoRepositoryImpl.swift */; };
+		CA14085F2DDECB4500AA3C41 /* MockEmpleadoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407FC2DDECB4500AA3C41 /* MockEmpleadoRepository.swift */; };
+		CA1408602DDECB4500AA3C41 /* EmpleadoEntitie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1407FE2DDECB4500AA3C41 /* EmpleadoEntitie.swift */; };
+		CA1408612DDECB4500AA3C41 /* MyAccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408002DDECB4500AA3C41 /* MyAccountRouter.swift */; };
+		CA1408622DDECB4500AA3C41 /* EmpleadoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408022DDECB4500AA3C41 /* EmpleadoViewModel.swift */; };
+		CA1408632DDECB4500AA3C41 /* EmpleadoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408042DDECB4500AA3C41 /* EmpleadoRepository.swift */; };
+		CA1408642DDECB4500AA3C41 /* FetchEmpleadoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408062DDECB4500AA3C41 /* FetchEmpleadoUseCase.swift */; };
+		CA1408652DDECB4500AA3C41 /* MiCuentaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408082DDECB4500AA3C41 /* MiCuentaView.swift */; };
+		CA1408662DDECB4500AA3C41 /* NotificationsMockDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14080A2DDECB4500AA3C41 /* NotificationsMockDataSource.swift */; };
+		CA1408672DDECB4500AA3C41 /* NotificationsRealDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14080B2DDECB4500AA3C41 /* NotificationsRealDataSource.swift */; };
+		CA1408682DDECB4500AA3C41 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14080D2DDECB4500AA3C41 /* NotificationEntity.swift */; };
+		CA1408692DDECB4500AA3C41 /* Notificaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14080F2DDECB4500AA3C41 /* Notificaciones.swift */; };
+		CA14086A2DDECB4500AA3C41 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408112DDECB4500AA3C41 /* NotificationsViewModel.swift */; };
+		CA14086B2DDECB4500AA3C41 /* NotificationsRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408142DDECB4500AA3C41 /* NotificationsRepositories.swift */; };
+		CA14086C2DDECB4500AA3C41 /* NotificationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408162DDECB4500AA3C41 /* NotificationsUseCase.swift */; };
+		CA14086D2DDECB4500AA3C41 /* NotificationsUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408172DDECB4500AA3C41 /* NotificationsUseCaseImpl.swift */; };
+		CA14086E2DDECB4500AA3C41 /* RecoveryPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14081C2DDECB4500AA3C41 /* RecoveryPasswordView.swift */; };
+		CA14086F2DDECB4500AA3C41 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14081E2DDECB4500AA3C41 /* SignInView.swift */; };
+		CA1408702DDECB4500AA3C41 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408202DDECB4500AA3C41 /* SignUpView.swift */; };
+		CA1408712DDECB4500AA3C41 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408222DDECB4500AA3C41 /* CustomColors.swift */; };
+		CA1408722DDECB4500AA3C41 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408232DDECB4500AA3C41 /* GlobalVariables.swift */; };
+		CA1408732DDECB4500AA3C41 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408242DDECB4500AA3C41 /* InputFieldView.swift */; };
+		CA1408742DDECB4500AA3C41 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408252DDECB4500AA3C41 /* NavBar.swift */; };
+		CA1408752DDECB4500AA3C41 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408262DDECB4500AA3C41 /* PrimaryButtonView.swift */; };
+		CA1408762DDECB4500AA3C41 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408272DDECB4500AA3C41 /* ToastView.swift */; };
+		CA1408772DDECB4500AA3C41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14082A2DDECB4500AA3C41 /* ContentView.swift */; };
+		CA1408782DDECB4500AA3C41 /* TD_PersonalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14082D2DDECB4500AA3C41 /* TD_PersonalApp.swift */; };
+		CA1408812DDECC3E00AA3C41 /* CarouselNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408802DDECC3E00AA3C41 /* CarouselNetworking.swift */; };
+		CA1408842DDECD0B00AA3C41 /* CarouselDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408832DDECD0B00AA3C41 /* CarouselDTO.swift */; };
+		CA1408862DDECDAA00AA3C41 /* CarouselNetworkingImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408852DDECDAA00AA3C41 /* CarouselNetworkingImp.swift */; };
+		CA1408882DDECF9500AA3C41 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408872DDECF9500AA3C41 /* URLs.swift */; };
+		CA14088A2DDED0C100AA3C41 /* CarouselNetworkingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408892DDED0C100AA3C41 /* CarouselNetworkingMock.swift */; };
+		CA14088C2DDED30700AA3C41 /* CarouselDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14088B2DDED30700AA3C41 /* CarouselDataSource.swift */; };
+		CA14088E2DDED43700AA3C41 /* CarouselRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14088D2DDED43700AA3C41 /* CarouselRepository.swift */; };
+		CA1408902DDED5E900AA3C41 /* CarouselUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14088F2DDED5E900AA3C41 /* CarouselUseCase.swift */; };
+		CA1408922DDED68D00AA3C41 /* CarouselFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408912DDED68D00AA3C41 /* CarouselFactory.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C641DD3E2D00140E00FAB8DB /* TD-Personal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TD-Personal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA1407AB2DDECB4500AA3C41 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		CA1407AD2DDECB4500AA3C41 /* CalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRouter.swift; sourceTree = "<group>"; };
+		CA1407AF2DDECB4500AA3C41 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		CA1407B02DDECB4500AA3C41 /* DayComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayComponentView.swift; sourceTree = "<group>"; };
+		CA1407B12DDECB4500AA3C41 /* InfoMessageDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMessageDayView.swift; sourceTree = "<group>"; };
+		CA1407B32DDECB4500AA3C41 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		CA1407B52DDECB4500AA3C41 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		CA1407B72DDECB4500AA3C41 /* DocumentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDTO.swift; sourceTree = "<group>"; };
+		CA1407B92DDECB4500AA3C41 /* DocumentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentService.swift; sourceTree = "<group>"; };
+		CA1407BA2DDECB4500AA3C41 /* MockDocumentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDocumentService.swift; sourceTree = "<group>"; };
+		CA1407BC2DDECB4500AA3C41 /* DocumentRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRepositoryImpl.swift; sourceTree = "<group>"; };
+		CA1407BF2DDECB4500AA3C41 /* EntitieDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitieDocument.swift; sourceTree = "<group>"; };
+		CA1407C12DDECB4500AA3C41 /* DocumentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRepository.swift; sourceTree = "<group>"; };
+		CA1407C32DDECB4500AA3C41 /* FetchDocumentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDocumentsUseCase.swift; sourceTree = "<group>"; };
+		CA1407C62DDECB4500AA3C41 /* DocumentsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsRouter.swift; sourceTree = "<group>"; };
+		CA1407C82DDECB4500AA3C41 /* DocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewModel.swift; sourceTree = "<group>"; };
+		CA1407CB2DDECB4500AA3C41 /* DocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsView.swift; sourceTree = "<group>"; };
+		CA1407CE2DDECB4500AA3C41 /* CarouselDataSourceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselDataSourceImp.swift; sourceTree = "<group>"; };
+		CA1407D02DDECB4500AA3C41 /* EntityCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityCarousel.swift; sourceTree = "<group>"; };
+		CA1407D22DDECB4500AA3C41 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		CA1407D42DDECB4500AA3C41 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CA1407D62DDECB4500AA3C41 /* CarouselRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselRepositoryImp.swift; sourceTree = "<group>"; };
+		CA1407D92DDECB4500AA3C41 /* CarouselImagesUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselImagesUseCaseImpl.swift; sourceTree = "<group>"; };
+		CA1407DB2DDECB4500AA3C41 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CA1407DD2DDECB4500AA3C41 /* DetailMovementAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovementAPIClient.swift; sourceTree = "<group>"; };
+		CA1407DE2DDECB4500AA3C41 /* DetailMovementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovementService.swift; sourceTree = "<group>"; };
+		CA1407DF2DDECB4500AA3C41 /* MockDetailMovementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailMovementService.swift; sourceTree = "<group>"; };
+		CA1407E22DDECB4500AA3C41 /* AllMovementsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMovementsEntity.swift; sourceTree = "<group>"; };
+		CA1407E32DDECB4500AA3C41 /* DetailMovementEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovementEntity.swift; sourceTree = "<group>"; };
+		CA1407E52DDECB4500AA3C41 /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
+		CA1407E62DDECB4500AA3C41 /* DetailMovementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovementRepository.swift; sourceTree = "<group>"; };
+		CA1407E72DDECB4500AA3C41 /* DetailMovementRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovementRepositoryImpl.swift; sourceTree = "<group>"; };
+		CA1407E82DDECB4500AA3C41 /* RealDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealDataRepository.swift; sourceTree = "<group>"; };
+		CA1407EA2DDECB4500AA3C41 /* AllMovementsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMovementsUseCase.swift; sourceTree = "<group>"; };
+		CA1407EB2DDECB4500AA3C41 /* FetchDetailMovementUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDetailMovementUseCase.swift; sourceTree = "<group>"; };
+		CA1407EE2DDECB4500AA3C41 /* MovementsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementsRouter.swift; sourceTree = "<group>"; };
+		CA1407F02DDECB4500AA3C41 /* InfoStatusSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoStatusSheetView.swift; sourceTree = "<group>"; };
+		CA1407F12DDECB4500AA3C41 /* StatusElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusElementView.swift; sourceTree = "<group>"; };
+		CA1407F32DDECB4500AA3C41 /* MovementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementDetailView.swift; sourceTree = "<group>"; };
+		CA1407F42DDECB4500AA3C41 /* MovimientosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovimientosView.swift; sourceTree = "<group>"; };
+		CA1407F62DDECB4500AA3C41 /* DetailMovementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovementViewModel.swift; sourceTree = "<group>"; };
+		CA1407F72DDECB4500AA3C41 /* MovimientoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovimientoViewModel.swift; sourceTree = "<group>"; };
+		CA1407FB2DDECB4500AA3C41 /* EmpleadoRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoRepositoryImpl.swift; sourceTree = "<group>"; };
+		CA1407FC2DDECB4500AA3C41 /* MockEmpleadoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmpleadoRepository.swift; sourceTree = "<group>"; };
+		CA1407FE2DDECB4500AA3C41 /* EmpleadoEntitie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoEntitie.swift; sourceTree = "<group>"; };
+		CA1408002DDECB4500AA3C41 /* MyAccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountRouter.swift; sourceTree = "<group>"; };
+		CA1408022DDECB4500AA3C41 /* EmpleadoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoViewModel.swift; sourceTree = "<group>"; };
+		CA1408042DDECB4500AA3C41 /* EmpleadoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoRepository.swift; sourceTree = "<group>"; };
+		CA1408062DDECB4500AA3C41 /* FetchEmpleadoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchEmpleadoUseCase.swift; sourceTree = "<group>"; };
+		CA1408082DDECB4500AA3C41 /* MiCuentaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCuentaView.swift; sourceTree = "<group>"; };
+		CA14080A2DDECB4500AA3C41 /* NotificationsMockDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsMockDataSource.swift; sourceTree = "<group>"; };
+		CA14080B2DDECB4500AA3C41 /* NotificationsRealDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRealDataSource.swift; sourceTree = "<group>"; };
+		CA14080D2DDECB4500AA3C41 /* NotificationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEntity.swift; sourceTree = "<group>"; };
+		CA14080F2DDECB4500AA3C41 /* Notificaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificaciones.swift; sourceTree = "<group>"; };
+		CA1408112DDECB4500AA3C41 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
+		CA1408142DDECB4500AA3C41 /* NotificationsRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRepositories.swift; sourceTree = "<group>"; };
+		CA1408162DDECB4500AA3C41 /* NotificationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsUseCase.swift; sourceTree = "<group>"; };
+		CA1408172DDECB4500AA3C41 /* NotificationsUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsUseCaseImpl.swift; sourceTree = "<group>"; };
+		CA14081A2DDECB4500AA3C41 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CA14081C2DDECB4500AA3C41 /* RecoveryPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordView.swift; sourceTree = "<group>"; };
+		CA14081E2DDECB4500AA3C41 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		CA1408202DDECB4500AA3C41 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		CA1408222DDECB4500AA3C41 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		CA1408232DDECB4500AA3C41 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		CA1408242DDECB4500AA3C41 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
+		CA1408252DDECB4500AA3C41 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		CA1408262DDECB4500AA3C41 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
+		CA1408272DDECB4500AA3C41 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		CA1408292DDECB4500AA3C41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA14082A2DDECB4500AA3C41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CA14082B2DDECB4500AA3C41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CA14082D2DDECB4500AA3C41 /* TD_PersonalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TD_PersonalApp.swift; sourceTree = "<group>"; };
+		CA1408802DDECC3E00AA3C41 /* CarouselNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselNetworking.swift; sourceTree = "<group>"; };
+		CA1408832DDECD0B00AA3C41 /* CarouselDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselDTO.swift; sourceTree = "<group>"; };
+		CA1408852DDECDAA00AA3C41 /* CarouselNetworkingImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselNetworkingImp.swift; sourceTree = "<group>"; };
+		CA1408872DDECF9500AA3C41 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		CA1408892DDED0C100AA3C41 /* CarouselNetworkingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselNetworkingMock.swift; sourceTree = "<group>"; };
+		CA14088B2DDED30700AA3C41 /* CarouselDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselDataSource.swift; sourceTree = "<group>"; };
+		CA14088D2DDED43700AA3C41 /* CarouselRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselRepository.swift; sourceTree = "<group>"; };
+		CA14088F2DDED5E900AA3C41 /* CarouselUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselUseCase.swift; sourceTree = "<group>"; };
+		CA1408912DDED68D00AA3C41 /* CarouselFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		CAC5B9572D7A360900F3967E /* TD-Personal */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "TD-Personal";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C641DD3B2D00140E00FAB8DB /* Frameworks */ = {
@@ -32,7 +189,7 @@
 		C641DD352D00140E00FAB8DB = {
 			isa = PBXGroup;
 			children = (
-				CAC5B9572D7A360900F3967E /* TD-Personal */,
+				CA14082E2DDECB4500AA3C41 /* TD-Personal */,
 				C641DD3F2D00140E00FAB8DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +200,598 @@
 				C641DD3E2D00140E00FAB8DB /* TD-Personal.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CA1407AC2DDECB4500AA3C41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407AB2DDECB4500AA3C41 /* Activity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA1407AE2DDECB4500AA3C41 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407AD2DDECB4500AA3C41 /* CalendarRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CA1407B22DDECB4500AA3C41 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407AF2DDECB4500AA3C41 /* CalendarHeaderView.swift */,
+				CA1407B02DDECB4500AA3C41 /* DayComponentView.swift */,
+				CA1407B12DDECB4500AA3C41 /* InfoMessageDayView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CA1407B42DDECB4500AA3C41 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407B22DDECB4500AA3C41 /* Components */,
+				CA1407B32DDECB4500AA3C41 /* CalendarView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CA1407B62DDECB4500AA3C41 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407AC2DDECB4500AA3C41 /* Model */,
+				CA1407AE2DDECB4500AA3C41 /* Navigation */,
+				CA1407B42DDECB4500AA3C41 /* Presentation */,
+				CA1407B52DDECB4500AA3C41 /* Date+Extension.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		CA1407B82DDECB4500AA3C41 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407B72DDECB4500AA3C41 /* DocumentDTO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CA1407BB2DDECB4500AA3C41 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407B92DDECB4500AA3C41 /* DocumentService.swift */,
+				CA1407BA2DDECB4500AA3C41 /* MockDocumentService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CA1407BD2DDECB4500AA3C41 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407BC2DDECB4500AA3C41 /* DocumentRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CA1407BE2DDECB4500AA3C41 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407B82DDECB4500AA3C41 /* Models */,
+				CA1407BB2DDECB4500AA3C41 /* Network */,
+				CA1407BD2DDECB4500AA3C41 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CA1407C02DDECB4500AA3C41 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407BF2DDECB4500AA3C41 /* EntitieDocument.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CA1407C22DDECB4500AA3C41 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407C12DDECB4500AA3C41 /* DocumentRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CA1407C42DDECB4500AA3C41 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407C32DDECB4500AA3C41 /* FetchDocumentsUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CA1407C52DDECB4500AA3C41 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407C02DDECB4500AA3C41 /* Entities */,
+				CA1407C22DDECB4500AA3C41 /* Repositories */,
+				CA1407C42DDECB4500AA3C41 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CA1407C72DDECB4500AA3C41 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407C62DDECB4500AA3C41 /* DocumentsRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CA1407C92DDECB4500AA3C41 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407C82DDECB4500AA3C41 /* DocumentViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CA1407CA2DDECB4500AA3C41 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407C92DDECB4500AA3C41 /* ViewModels */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CA1407CC2DDECB4500AA3C41 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407BE2DDECB4500AA3C41 /* Data */,
+				CA1407C52DDECB4500AA3C41 /* Domain */,
+				CA1407C72DDECB4500AA3C41 /* Navigation */,
+				CA1407CA2DDECB4500AA3C41 /* Presentation */,
+				CA1407CB2DDECB4500AA3C41 /* DocumentsView.swift */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		CA1407CF2DDECB4500AA3C41 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408822DDECCD200AA3C41 /* DTO */,
+				CA14087D2DDECBB300AA3C41 /* Interface */,
+				CA14087A2DDECB7F00AA3C41 /* DataSource */,
+				CA1407D72DDECB4500AA3C41 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CA1407D12DDECB4500AA3C41 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407D02DDECB4500AA3C41 /* EntityCarousel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CA1407D32DDECB4500AA3C41 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407D22DDECB4500AA3C41 /* HomeRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CA1407D52DDECB4500AA3C41 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407D42DDECB4500AA3C41 /* HomeViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CA1407D72DDECB4500AA3C41 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407D62DDECB4500AA3C41 /* CarouselRepositoryImp.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CA1407DA2DDECB4500AA3C41 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407D92DDECB4500AA3C41 /* CarouselImagesUseCaseImpl.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CA1407DC2DDECB4500AA3C41 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CA14087E2DDECC0100AA3C41 /* Factory */,
+				CA14087C2DDECBA200AA3C41 /* Infraestructure */,
+				CA1408792DDECB4A00AA3C41 /* Domain */,
+				CA1407CF2DDECB4500AA3C41 /* Data */,
+				CA1407D32DDECB4500AA3C41 /* Navigation */,
+				CA1407D52DDECB4500AA3C41 /* Presentation */,
+				CA1407DB2DDECB4500AA3C41 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CA1407E02DDECB4500AA3C41 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407DD2DDECB4500AA3C41 /* DetailMovementAPIClient.swift */,
+				CA1407DE2DDECB4500AA3C41 /* DetailMovementService.swift */,
+				CA1407DF2DDECB4500AA3C41 /* MockDetailMovementService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CA1407E12DDECB4500AA3C41 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407E02DDECB4500AA3C41 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CA1407E42DDECB4500AA3C41 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407E22DDECB4500AA3C41 /* AllMovementsEntity.swift */,
+				CA1407E32DDECB4500AA3C41 /* DetailMovementEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CA1407E92DDECB4500AA3C41 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407E52DDECB4500AA3C41 /* DataRepository.swift */,
+				CA1407E62DDECB4500AA3C41 /* DetailMovementRepository.swift */,
+				CA1407E72DDECB4500AA3C41 /* DetailMovementRepositoryImpl.swift */,
+				CA1407E82DDECB4500AA3C41 /* RealDataRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CA1407EC2DDECB4500AA3C41 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407EA2DDECB4500AA3C41 /* AllMovementsUseCase.swift */,
+				CA1407EB2DDECB4500AA3C41 /* FetchDetailMovementUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CA1407ED2DDECB4500AA3C41 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407E42DDECB4500AA3C41 /* Entities */,
+				CA1407E92DDECB4500AA3C41 /* Repositories */,
+				CA1407EC2DDECB4500AA3C41 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CA1407EF2DDECB4500AA3C41 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407EE2DDECB4500AA3C41 /* MovementsRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CA1407F22DDECB4500AA3C41 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407F02DDECB4500AA3C41 /* InfoStatusSheetView.swift */,
+				CA1407F12DDECB4500AA3C41 /* StatusElementView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CA1407F52DDECB4500AA3C41 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407F22DDECB4500AA3C41 /* Components */,
+				CA1407F32DDECB4500AA3C41 /* MovementDetailView.swift */,
+				CA1407F42DDECB4500AA3C41 /* MovimientosView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA1407F82DDECB4500AA3C41 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407F62DDECB4500AA3C41 /* DetailMovementViewModel.swift */,
+				CA1407F72DDECB4500AA3C41 /* MovimientoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CA1407F92DDECB4500AA3C41 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407F52DDECB4500AA3C41 /* View */,
+				CA1407F82DDECB4500AA3C41 /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CA1407FA2DDECB4500AA3C41 /* Movements */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407E12DDECB4500AA3C41 /* Data */,
+				CA1407ED2DDECB4500AA3C41 /* Domain */,
+				CA1407EF2DDECB4500AA3C41 /* Navigation */,
+				CA1407F92DDECB4500AA3C41 /* Presentation */,
+			);
+			path = Movements;
+			sourceTree = "<group>";
+		};
+		CA1407FD2DDECB4500AA3C41 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407FB2DDECB4500AA3C41 /* EmpleadoRepositoryImpl.swift */,
+				CA1407FC2DDECB4500AA3C41 /* MockEmpleadoRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CA1407FF2DDECB4500AA3C41 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407FE2DDECB4500AA3C41 /* EmpleadoEntitie.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CA1408012DDECB4500AA3C41 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408002DDECB4500AA3C41 /* MyAccountRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CA1408032DDECB4500AA3C41 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408022DDECB4500AA3C41 /* EmpleadoViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CA1408052DDECB4500AA3C41 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408042DDECB4500AA3C41 /* EmpleadoRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CA1408072DDECB4500AA3C41 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408062DDECB4500AA3C41 /* FetchEmpleadoUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CA1408092DDECB4500AA3C41 /* MyAccount */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407FD2DDECB4500AA3C41 /* Data */,
+				CA1407FF2DDECB4500AA3C41 /* Entities */,
+				CA1408012DDECB4500AA3C41 /* Navigation */,
+				CA1408032DDECB4500AA3C41 /* Presentation */,
+				CA1408052DDECB4500AA3C41 /* Repositories */,
+				CA1408072DDECB4500AA3C41 /* UseCases */,
+				CA1408082DDECB4500AA3C41 /* MiCuentaView.swift */,
+			);
+			path = MyAccount;
+			sourceTree = "<group>";
+		};
+		CA14080C2DDECB4500AA3C41 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CA14080A2DDECB4500AA3C41 /* NotificationsMockDataSource.swift */,
+				CA14080B2DDECB4500AA3C41 /* NotificationsRealDataSource.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CA14080E2DDECB4500AA3C41 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CA14080D2DDECB4500AA3C41 /* NotificationEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CA1408102DDECB4500AA3C41 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA14080F2DDECB4500AA3C41 /* Notificaciones.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA1408122DDECB4500AA3C41 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408112DDECB4500AA3C41 /* NotificationsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CA1408132DDECB4500AA3C41 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408102DDECB4500AA3C41 /* View */,
+				CA1408122DDECB4500AA3C41 /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CA1408152DDECB4500AA3C41 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408142DDECB4500AA3C41 /* NotificationsRepositories.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CA1408182DDECB4500AA3C41 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408162DDECB4500AA3C41 /* NotificationsUseCase.swift */,
+				CA1408172DDECB4500AA3C41 /* NotificationsUseCaseImpl.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		CA1408192DDECB4500AA3C41 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				CA14080C2DDECB4500AA3C41 /* Data */,
+				CA14080E2DDECB4500AA3C41 /* Entities */,
+				CA1408132DDECB4500AA3C41 /* Presentation */,
+				CA1408152DDECB4500AA3C41 /* Repositories */,
+				CA1408182DDECB4500AA3C41 /* UseCase */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		CA14081B2DDECB4500AA3C41 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CA14081A2DDECB4500AA3C41 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CA14081D2DDECB4500AA3C41 /* RecoveryPassword */ = {
+			isa = PBXGroup;
+			children = (
+				CA14081C2DDECB4500AA3C41 /* RecoveryPasswordView.swift */,
+			);
+			path = RecoveryPassword;
+			sourceTree = "<group>";
+		};
+		CA14081F2DDECB4500AA3C41 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				CA14081E2DDECB4500AA3C41 /* SignInView.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		CA1408212DDECB4500AA3C41 /* SingUp */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408202DDECB4500AA3C41 /* SignUpView.swift */,
+			);
+			path = SingUp;
+			sourceTree = "<group>";
+		};
+		CA1408282DDECB4500AA3C41 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408222DDECB4500AA3C41 /* CustomColors.swift */,
+				CA1408232DDECB4500AA3C41 /* GlobalVariables.swift */,
+				CA1408242DDECB4500AA3C41 /* InputFieldView.swift */,
+				CA1408252DDECB4500AA3C41 /* NavBar.swift */,
+				CA1408262DDECB4500AA3C41 /* PrimaryButtonView.swift */,
+				CA1408272DDECB4500AA3C41 /* ToastView.swift */,
+				CA1408872DDECF9500AA3C41 /* URLs.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CA14082E2DDECB4500AA3C41 /* TD-Personal */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407B62DDECB4500AA3C41 /* Calendar */,
+				CA1407CC2DDECB4500AA3C41 /* Documents */,
+				CA1407DC2DDECB4500AA3C41 /* Home */,
+				CA1407FA2DDECB4500AA3C41 /* Movements */,
+				CA1408092DDECB4500AA3C41 /* MyAccount */,
+				CA1408192DDECB4500AA3C41 /* Notifications */,
+				CA14081B2DDECB4500AA3C41 /* Preview Content */,
+				CA14081D2DDECB4500AA3C41 /* RecoveryPassword */,
+				CA14081F2DDECB4500AA3C41 /* SignIn */,
+				CA1408212DDECB4500AA3C41 /* SingUp */,
+				CA1408282DDECB4500AA3C41 /* Utilities */,
+				CA1408292DDECB4500AA3C41 /* Assets.xcassets */,
+				CA14082A2DDECB4500AA3C41 /* ContentView.swift */,
+				CA14082C2DDECB4500AA3C41 /* Localizable.strings */,
+				CA14082D2DDECB4500AA3C41 /* TD_PersonalApp.swift */,
+			);
+			path = "TD-Personal";
+			sourceTree = "<group>";
+		};
+		CA1408792DDECB4A00AA3C41 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CA14087B2DDECB9700AA3C41 /* Interface */,
+				CA1407D12DDECB4500AA3C41 /* Entities */,
+				CA1407DA2DDECB4500AA3C41 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CA14087A2DDECB7F00AA3C41 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407CE2DDECB4500AA3C41 /* CarouselDataSourceImp.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		CA14087B2DDECB9700AA3C41 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				CA14088D2DDED43700AA3C41 /* CarouselRepository.swift */,
+				CA14088F2DDED5E900AA3C41 /* CarouselUseCase.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		CA14087C2DDECBA200AA3C41 /* Infraestructure */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408852DDECDAA00AA3C41 /* CarouselNetworkingImp.swift */,
+				CA1408892DDED0C100AA3C41 /* CarouselNetworkingMock.swift */,
+			);
+			path = Infraestructure;
+			sourceTree = "<group>";
+		};
+		CA14087D2DDECBB300AA3C41 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408802DDECC3E00AA3C41 /* CarouselNetworking.swift */,
+				CA14088B2DDED30700AA3C41 /* CarouselDataSource.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		CA14087E2DDECC0100AA3C41 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408912DDED68D00AA3C41 /* CarouselFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		CA1408822DDECCD200AA3C41 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				CA1408832DDECD0B00AA3C41 /* CarouselDTO.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +808,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				CAC5B9572D7A360900F3967E /* TD-Personal */,
 			);
 			name = "TD-Personal";
 			packageProductDependencies = (
@@ -109,6 +855,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA14082F2DDECB4500AA3C41 /* Preview Assets.xcassets in Resources */,
+				CA1408302DDECB4500AA3C41 /* Assets.xcassets in Resources */,
+				CA1408312DDECB4500AA3C41 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,10 +868,99 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA1408322DDECB4500AA3C41 /* Activity.swift in Sources */,
+				CA1408332DDECB4500AA3C41 /* CalendarRouter.swift in Sources */,
+				CA1408342DDECB4500AA3C41 /* CalendarHeaderView.swift in Sources */,
+				CA1408352DDECB4500AA3C41 /* DayComponentView.swift in Sources */,
+				CA1408362DDECB4500AA3C41 /* InfoMessageDayView.swift in Sources */,
+				CA1408372DDECB4500AA3C41 /* CalendarView.swift in Sources */,
+				CA1408382DDECB4500AA3C41 /* Date+Extension.swift in Sources */,
+				CA1408392DDECB4500AA3C41 /* DocumentDTO.swift in Sources */,
+				CA14083A2DDECB4500AA3C41 /* DocumentService.swift in Sources */,
+				CA14083B2DDECB4500AA3C41 /* MockDocumentService.swift in Sources */,
+				CA14083C2DDECB4500AA3C41 /* DocumentRepositoryImpl.swift in Sources */,
+				CA14083D2DDECB4500AA3C41 /* EntitieDocument.swift in Sources */,
+				CA1408812DDECC3E00AA3C41 /* CarouselNetworking.swift in Sources */,
+				CA1408842DDECD0B00AA3C41 /* CarouselDTO.swift in Sources */,
+				CA14083E2DDECB4500AA3C41 /* DocumentRepository.swift in Sources */,
+				CA14083F2DDECB4500AA3C41 /* FetchDocumentsUseCase.swift in Sources */,
+				CA1408402DDECB4500AA3C41 /* DocumentsRouter.swift in Sources */,
+				CA1408412DDECB4500AA3C41 /* DocumentViewModel.swift in Sources */,
+				CA1408422DDECB4500AA3C41 /* DocumentsView.swift in Sources */,
+				CA1408442DDECB4500AA3C41 /* CarouselDataSourceImp.swift in Sources */,
+				CA1408452DDECB4500AA3C41 /* EntityCarousel.swift in Sources */,
+				CA1408902DDED5E900AA3C41 /* CarouselUseCase.swift in Sources */,
+				CA1408922DDED68D00AA3C41 /* CarouselFactory.swift in Sources */,
+				CA1408462DDECB4500AA3C41 /* HomeRouter.swift in Sources */,
+				CA1408472DDECB4500AA3C41 /* HomeViewModel.swift in Sources */,
+				CA1408482DDECB4500AA3C41 /* CarouselRepositoryImp.swift in Sources */,
+				CA1408882DDECF9500AA3C41 /* URLs.swift in Sources */,
+				CA14084A2DDECB4500AA3C41 /* CarouselImagesUseCaseImpl.swift in Sources */,
+				CA14088E2DDED43700AA3C41 /* CarouselRepository.swift in Sources */,
+				CA14084B2DDECB4500AA3C41 /* HomeView.swift in Sources */,
+				CA14084C2DDECB4500AA3C41 /* DetailMovementAPIClient.swift in Sources */,
+				CA14084D2DDECB4500AA3C41 /* DetailMovementService.swift in Sources */,
+				CA1408862DDECDAA00AA3C41 /* CarouselNetworkingImp.swift in Sources */,
+				CA14084E2DDECB4500AA3C41 /* MockDetailMovementService.swift in Sources */,
+				CA14084F2DDECB4500AA3C41 /* AllMovementsEntity.swift in Sources */,
+				CA1408502DDECB4500AA3C41 /* DetailMovementEntity.swift in Sources */,
+				CA1408512DDECB4500AA3C41 /* DataRepository.swift in Sources */,
+				CA1408522DDECB4500AA3C41 /* DetailMovementRepository.swift in Sources */,
+				CA1408532DDECB4500AA3C41 /* DetailMovementRepositoryImpl.swift in Sources */,
+				CA1408542DDECB4500AA3C41 /* RealDataRepository.swift in Sources */,
+				CA1408552DDECB4500AA3C41 /* AllMovementsUseCase.swift in Sources */,
+				CA1408562DDECB4500AA3C41 /* FetchDetailMovementUseCase.swift in Sources */,
+				CA1408572DDECB4500AA3C41 /* MovementsRouter.swift in Sources */,
+				CA1408582DDECB4500AA3C41 /* InfoStatusSheetView.swift in Sources */,
+				CA1408592DDECB4500AA3C41 /* StatusElementView.swift in Sources */,
+				CA14085A2DDECB4500AA3C41 /* MovementDetailView.swift in Sources */,
+				CA14088C2DDED30700AA3C41 /* CarouselDataSource.swift in Sources */,
+				CA14085B2DDECB4500AA3C41 /* MovimientosView.swift in Sources */,
+				CA14085C2DDECB4500AA3C41 /* DetailMovementViewModel.swift in Sources */,
+				CA14085D2DDECB4500AA3C41 /* MovimientoViewModel.swift in Sources */,
+				CA14085E2DDECB4500AA3C41 /* EmpleadoRepositoryImpl.swift in Sources */,
+				CA14085F2DDECB4500AA3C41 /* MockEmpleadoRepository.swift in Sources */,
+				CA1408602DDECB4500AA3C41 /* EmpleadoEntitie.swift in Sources */,
+				CA1408612DDECB4500AA3C41 /* MyAccountRouter.swift in Sources */,
+				CA1408622DDECB4500AA3C41 /* EmpleadoViewModel.swift in Sources */,
+				CA1408632DDECB4500AA3C41 /* EmpleadoRepository.swift in Sources */,
+				CA1408642DDECB4500AA3C41 /* FetchEmpleadoUseCase.swift in Sources */,
+				CA1408652DDECB4500AA3C41 /* MiCuentaView.swift in Sources */,
+				CA1408662DDECB4500AA3C41 /* NotificationsMockDataSource.swift in Sources */,
+				CA1408672DDECB4500AA3C41 /* NotificationsRealDataSource.swift in Sources */,
+				CA1408682DDECB4500AA3C41 /* NotificationEntity.swift in Sources */,
+				CA1408692DDECB4500AA3C41 /* Notificaciones.swift in Sources */,
+				CA14086A2DDECB4500AA3C41 /* NotificationsViewModel.swift in Sources */,
+				CA14086B2DDECB4500AA3C41 /* NotificationsRepositories.swift in Sources */,
+				CA14086C2DDECB4500AA3C41 /* NotificationsUseCase.swift in Sources */,
+				CA14088A2DDED0C100AA3C41 /* CarouselNetworkingMock.swift in Sources */,
+				CA14086D2DDECB4500AA3C41 /* NotificationsUseCaseImpl.swift in Sources */,
+				CA14086E2DDECB4500AA3C41 /* RecoveryPasswordView.swift in Sources */,
+				CA14086F2DDECB4500AA3C41 /* SignInView.swift in Sources */,
+				CA1408702DDECB4500AA3C41 /* SignUpView.swift in Sources */,
+				CA1408712DDECB4500AA3C41 /* CustomColors.swift in Sources */,
+				CA1408722DDECB4500AA3C41 /* GlobalVariables.swift in Sources */,
+				CA1408732DDECB4500AA3C41 /* InputFieldView.swift in Sources */,
+				CA1408742DDECB4500AA3C41 /* NavBar.swift in Sources */,
+				CA1408752DDECB4500AA3C41 /* PrimaryButtonView.swift in Sources */,
+				CA1408762DDECB4500AA3C41 /* ToastView.swift in Sources */,
+				CA1408772DDECB4500AA3C41 /* ContentView.swift in Sources */,
+				CA1408782DDECB4500AA3C41 /* TD_PersonalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CA14082C2DDECB4500AA3C41 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA14082B2DDECB4500AA3C41 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C641DD4A2D00140F00FAB8DB /* Debug */ = {

@@ -8,26 +8,20 @@
 import Foundation
 
 class HomeViewModel: ObservableObject {
-    private let fetchCarouselImagesUseCase: CarouselImagesUseCase
-    @Published var items: [CarouselItem] = []
+    @Published var items: [CarouselItemDTO] = []
     @Published var errorMessage: String?
 
-    // Inicializador por defecto
-    init(fetchCarouselImagesUseCase: CarouselImagesUseCase = CarouselImagesUseCaseImpl(repository: CarouselMockDataSource())) {
-        self.fetchCarouselImagesUseCase = fetchCarouselImagesUseCase
-    }
-
+    @MainActor
     func fetchCarousel() {
-        fetchCarouselImagesUseCase.execute { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let items):
-                    DispatchQueue.main.async {
-                        self?.items = items
-                    }
-                case .failure(let error):
-                    self?.errorMessage = error.localizedDescription
-                }
+        Task {
+            let carouselFactory = CarouselFactory.build()
+            
+            var result = await carouselFactory.execute()
+            switch result {
+            case .success(let dto):
+                self.items = dto.data
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
             }
         }
     }

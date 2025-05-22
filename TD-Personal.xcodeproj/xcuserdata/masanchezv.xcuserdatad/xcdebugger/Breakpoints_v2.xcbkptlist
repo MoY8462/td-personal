@@ -39,17 +39,121 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1FB22FE8-B1EF-422F-B969-046C651C8A62"
+            uuid = "6489BD69-AA67-4712-A3C4-541041B0BEA7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TD-Personal/Calendar/Presentation/CalendarView.swift"
+            filePath = "TD-Personal/Home/Presentation/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "setupCounts()"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "fetchCarousel()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6489BD69-AA67-4712-A3C4-541041B0BEA7 - d7b358f6c22678af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 () async -&gt; () in TD_Personal.HomeViewModel.fetchCarousel() -&gt; ()"
+                  moduleName = "TD-Personal.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masanchezv/Documents/Ejemplos/TD-Personal/TD-Personal/Home/Presentation/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21">
+               </Location>
+               <Location
+                  uuid = "6489BD69-AA67-4712-A3C4-541041B0BEA7 - d7b358f6c22678af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 () async -&gt; () in TD_Personal.HomeViewModel.fetchCarousel() -&gt; ()"
+                  moduleName = "TD-Personal.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masanchezv/Documents/Ejemplos/TD-Personal/TD-Personal/Home/Presentation/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21">
+               </Location>
+               <Location
+                  uuid = "6489BD69-AA67-4712-A3C4-541041B0BEA7 - d7b358f6c22678af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 () async -&gt; () in TD_Personal.HomeViewModel.fetchCarousel() -&gt; ()"
+                  moduleName = "TD-Personal.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masanchezv/Documents/Ejemplos/TD-Personal/TD-Personal/Home/Presentation/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F31A03B-2B51-4E91-B171-A19526BF6758"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TD-Personal/Home/Data/DataSource/CarouselDataSourceImp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "execute()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0F31A03B-2B51-4E91-B171-A19526BF6758 - 772d91afcc616376"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for TD_Personal.CarouselDataSourceImp.execute() async -&gt; Swift.Result&lt;TD_Personal.CarouselDTO, __C.NSError&gt;"
+                  moduleName = "TD-Personal.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masanchezv/Documents/Ejemplos/TD-Personal/TD-Personal/Home/Data/DataSource/CarouselDataSourceImp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+               <Location
+                  uuid = "0F31A03B-2B51-4E91-B171-A19526BF6758 - 772d91afcc616376"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for TD_Personal.CarouselDataSourceImp.execute() async -&gt; Swift.Result&lt;TD_Personal.CarouselDTO, __C.NSError&gt;"
+                  moduleName = "TD-Personal.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masanchezv/Documents/Ejemplos/TD-Personal/TD-Personal/Home/Data/DataSource/CarouselDataSourceImp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+               <Location
+                  uuid = "0F31A03B-2B51-4E91-B171-A19526BF6758 - 772d91afcc616376"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for TD_Personal.CarouselDataSourceImp.execute() async -&gt; Swift.Result&lt;TD_Personal.CarouselDTO, __C.NSError&gt;"
+                  moduleName = "TD-Personal.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masanchezv/Documents/Ejemplos/TD-Personal/TD-Personal/Home/Data/DataSource/CarouselDataSourceImp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
