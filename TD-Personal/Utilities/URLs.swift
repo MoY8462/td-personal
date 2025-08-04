@@ -9,4 +9,5 @@ import Foundation
 
 enum URLs: String {
     case carousel = "https://api.example.com/carousel"
+    case listDocuments = "https://api.example.com/carousel"
 }

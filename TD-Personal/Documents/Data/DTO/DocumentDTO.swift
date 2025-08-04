@@ -51,7 +51,7 @@ struct Datum: Codable {
     let documentos: [Document]
 }
 
-struct DocumentResponse: Codable {
+struct DocumentsDTO: Codable {
     let status: String
     let data: [Datum]
     let error: String?

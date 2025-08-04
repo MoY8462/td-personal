@@ -88,6 +88,9 @@
 		CA14088E2DDED43700AA3C41 /* CarouselRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14088D2DDED43700AA3C41 /* CarouselRepository.swift */; };
 		CA1408902DDED5E900AA3C41 /* CarouselUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14088F2DDED5E900AA3C41 /* CarouselUseCase.swift */; };
 		CA1408922DDED68D00AA3C41 /* CarouselFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1408912DDED68D00AA3C41 /* CarouselFactory.swift */; };
+		CAA14CAF2DE0D3F300FA503F /* DocumentsNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA14CAE2DE0D3F300FA503F /* DocumentsNetwork.swift */; };
+		CAA14CB12DE0D4D900FA503F /* DocumentsNetworkImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA14CB02DE0D4D900FA503F /* DocumentsNetworkImp.swift */; };
+		CAA14CB32DE0EBF900FA503F /* DocumentsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA14CB22DE0EBF900FA503F /* DocumentsDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,6 +176,9 @@
 		CA14088D2DDED43700AA3C41 /* CarouselRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselRepository.swift; sourceTree = "<group>"; };
 		CA14088F2DDED5E900AA3C41 /* CarouselUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselUseCase.swift; sourceTree = "<group>"; };
 		CA1408912DDED68D00AA3C41 /* CarouselFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselFactory.swift; sourceTree = "<group>"; };
+		CAA14CAE2DE0D3F300FA503F /* DocumentsNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsNetwork.swift; sourceTree = "<group>"; };
+		CAA14CB02DE0D4D900FA503F /* DocumentsNetworkImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsNetworkImp.swift; sourceTree = "<group>"; };
+		CAA14CB22DE0EBF900FA503F /* DocumentsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,19 +254,18 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		CA1407B82DDECB4500AA3C41 /* Models */ = {
+		CA1407B82DDECB4500AA3C41 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
 				CA1407B72DDECB4500AA3C41 /* DocumentDTO.swift */,
 			);
-			path = Models;
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		CA1407BB2DDECB4500AA3C41 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				CA1407B92DDECB4500AA3C41 /* DocumentService.swift */,
-				CA1407BA2DDECB4500AA3C41 /* MockDocumentService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -276,7 +281,8 @@
 		CA1407BE2DDECB4500AA3C41 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				CA1407B82DDECB4500AA3C41 /* Models */,
+				CAA14CAD2DE0D3A600FA503F /* Interfaces */,
+				CA1407B82DDECB4500AA3C41 /* DTO */,
 				CA1407BB2DDECB4500AA3C41 /* Network */,
 				CA1407BD2DDECB4500AA3C41 /* Repositories */,
 			);
@@ -344,6 +350,7 @@
 		CA1407CC2DDECB4500AA3C41 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				CA1408932DDEEA6D00AA3C41 /* Infraestructure */,
 				CA1407BE2DDECB4500AA3C41 /* Data */,
 				CA1407C52DDECB4500AA3C41 /* Domain */,
 				CA1407C72DDECB4500AA3C41 /* Navigation */,
@@ -794,6 +801,24 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
+		CA1408932DDEEA6D00AA3C41 /* Infraestructure */ = {
+			isa = PBXGroup;
+			children = (
+				CA1407BA2DDECB4500AA3C41 /* MockDocumentService.swift */,
+				CAA14CB02DE0D4D900FA503F /* DocumentsNetworkImp.swift */,
+			);
+			path = Infraestructure;
+			sourceTree = "<group>";
+		};
+		CAA14CAD2DE0D3A600FA503F /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				CAA14CAE2DE0D3F300FA503F /* DocumentsNetwork.swift */,
+				CAA14CB22DE0EBF900FA503F /* DocumentsDataSource.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -874,6 +899,7 @@
 				CA1408352DDECB4500AA3C41 /* DayComponentView.swift in Sources */,
 				CA1408362DDECB4500AA3C41 /* InfoMessageDayView.swift in Sources */,
 				CA1408372DDECB4500AA3C41 /* CalendarView.swift in Sources */,
+				CAA14CB12DE0D4D900FA503F /* DocumentsNetworkImp.swift in Sources */,
 				CA1408382DDECB4500AA3C41 /* Date+Extension.swift in Sources */,
 				CA1408392DDECB4500AA3C41 /* DocumentDTO.swift in Sources */,
 				CA14083A2DDECB4500AA3C41 /* DocumentService.swift in Sources */,
@@ -933,10 +959,12 @@
 				CA14086A2DDECB4500AA3C41 /* NotificationsViewModel.swift in Sources */,
 				CA14086B2DDECB4500AA3C41 /* NotificationsRepositories.swift in Sources */,
 				CA14086C2DDECB4500AA3C41 /* NotificationsUseCase.swift in Sources */,
+				CAA14CAF2DE0D3F300FA503F /* DocumentsNetwork.swift in Sources */,
 				CA14088A2DDED0C100AA3C41 /* CarouselNetworkingMock.swift in Sources */,
 				CA14086D2DDECB4500AA3C41 /* NotificationsUseCaseImpl.swift in Sources */,
 				CA14086E2DDECB4500AA3C41 /* RecoveryPasswordView.swift in Sources */,
 				CA14086F2DDECB4500AA3C41 /* SignInView.swift in Sources */,
+				CAA14CB32DE0EBF900FA503F /* DocumentsDataSource.swift in Sources */,
 				CA1408702DDECB4500AA3C41 /* SignUpView.swift in Sources */,
 				CA1408712DDECB4500AA3C41 /* CustomColors.swift in Sources */,
 				CA1408722DDECB4500AA3C41 /* GlobalVariables.swift in Sources */,
